@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.pnlMap = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.tmrCharacter = new System.Windows.Forms.Timer(this.components);
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
             this.pnlMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -57,12 +56,6 @@
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            // 
-            // tmrCharacter
-            // 
-            this.tmrCharacter.Enabled = true;
-            this.tmrCharacter.Interval = 50;
-            this.tmrCharacter.Tick += new System.EventHandler(this.tmrCharacter_Tick);
             // 
             // tmrCharacterWalking
             // 
