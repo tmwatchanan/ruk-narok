@@ -153,6 +153,26 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoviceWalkBackLeft {
+            get {
+                object obj = ResourceManager.GetObject("NoviceWalkBackLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceWalkBackRight {
+            get {
+                object obj = ResourceManager.GetObject("NoviceWalkBackRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NoviceWalkDown {
             get {
                 object obj = ResourceManager.GetObject("NoviceWalkDown", resourceCulture);
