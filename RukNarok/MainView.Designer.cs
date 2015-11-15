@@ -32,6 +32,7 @@
             this.pnlMap = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
+            this.tmrCharacterWalkingStatus = new System.Windows.Forms.Timer(this.components);
             this.pnlMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +64,11 @@
             this.tmrCharacterWalking.Interval = 10;
             this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
             // 
+            // tmrCharacterWalkingStatus
+            // 
+            this.tmrCharacterWalkingStatus.Interval = 2000;
+            this.tmrCharacterWalkingStatus.Tick += new System.EventHandler(this.tmrCharacterWalkingStatus_Tick);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,5 +95,6 @@
         private System.Windows.Forms.Timer tmrCharacter;
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.Timer tmrCharacterWalking;
+        private System.Windows.Forms.Timer tmrCharacterWalkingStatus;
     }
 }

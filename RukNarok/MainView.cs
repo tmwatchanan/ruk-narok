@@ -38,9 +38,10 @@ namespace RukNarok
         private bool PlayerPressKeyLeft = false;
         private bool PlayerPressKeyRight = false;
         private bool PlayerMoving = true;
+        private bool PlayerMovingOblique = true;
         private bool PlayerAnimationChanging = true;
-        //private char PreMovingDirection;
-        Keys PreMovingDirection;
+        Keys[] PreMovingDirection = new Keys[2];
+
         //private bool IsPlayerPressAttack = false;
 
         private const int moveDistance = 2;
@@ -69,29 +70,33 @@ namespace RukNarok
         
         private void MainView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != PreMovingDirection)
+            if (e.KeyCode != PreMovingDirection[0])
             {
                 PlayerAnimationChanging = true;
             }
             if (e.KeyCode == Keys.Up)
             {
                 PlayerPressKeyUp = true;
-                PreMovingDirection = Keys.Up;
+                PreMovingDirection[1] = PreMovingDirection[0];
+                PreMovingDirection[0] = Keys.Up;
             }
             if (e.KeyCode == Keys.Down)
             {
                 PlayerPressKeyDown = true;
-                PreMovingDirection = Keys.Down;
+                PreMovingDirection[1] = PreMovingDirection[0];
+                PreMovingDirection[0] = Keys.Down;
             }
             if (e.KeyCode == Keys.Left)
             {
                 PlayerPressKeyLeft = true;
-                PreMovingDirection = Keys.Left;
+                PreMovingDirection[1] = PreMovingDirection[0];
+                PreMovingDirection[0] = Keys.Left;
             }
             if (e.KeyCode == Keys.Right)
             {
                 PlayerPressKeyRight = true;
-                PreMovingDirection = Keys.Right;
+                PreMovingDirection[1] = PreMovingDirection[0];
+                PreMovingDirection[0] = Keys.Right;
             }
 
             //if (e.KeyCode == Keys.Space && PlayerWeapon.Visible == false) IsPlayerPressAttack = true;
@@ -100,95 +105,69 @@ namespace RukNarok
         {
             PlayerAnimationChanging = true;
             PlayerMoving = true;
-            if (e.KeyCode == Keys.Up)
+            PlayerMovingOblique = true;
+            //if (PlayerMovingOblique)
             {
-                PlayerPressKeyUp = false;
-                picPlayer.Image = Properties.Resources.NoviceStandBack;
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                PlayerPressKeyDown = false;
-                picPlayer.Image = Properties.Resources.NoviceStandFront;
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                PlayerPressKeyLeft = false;
-                picPlayer.Image = Properties.Resources.NoviceStandLeft;
-
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                PlayerPressKeyRight = false;
-                picPlayer.Image = Properties.Resources.NoviceStandRight;
-            }
-            /*if (e.KeyCode == Keys.Up)
-            {
-                if (IsPlayerHoldKeyBackLeft)
+                if (PlayerMovingOblique && PreMovingDirection[0] == Keys.Up && PreMovingDirection[1] == Keys.Left
+                    || PlayerMovingOblique && PreMovingDirection[1] == Keys.Up && PreMovingDirection[0] == Keys.Left)
                 {
-                    //picPlayer.Image = Properties.Resources.NoveSt;
+                    PlayerPressKeyUp = false;
+                    PlayerPressKeyLeft = false;
+                    picPlayer.Image = Properties.Resources.NoviceStandBackRight; // BackLeft
                 }
-                else if (IsPlayerHoldKeyBackRight)
+                else if (PlayerMovingOblique && PreMovingDirection[0] == Keys.Up && PreMovingDirection[1] == Keys.Right
+                    || PlayerMovingOblique && PreMovingDirection[1] == Keys.Up && PreMovingDirection[0] == Keys.Right)
                 {
+                    PlayerPressKeyUp = false;
+                    PlayerPressKeyRight = false;
                     picPlayer.Image = Properties.Resources.NoviceStandBackRight;
                 }
-                else
+                else if (PlayerMovingOblique && PreMovingDirection[0] == Keys.Down && PreMovingDirection[1] == Keys.Left
+                    || PlayerMovingOblique && PreMovingDirection[1] == Keys.Down && PreMovingDirection[0] == Keys.Left)
                 {
+                    PlayerPressKeyDown = false;
+                    PlayerPressKeyLeft = false;
+                    picPlayer.Image = Properties.Resources.NoviceStandFrontLeft;
+                }
+                else if (PlayerMovingOblique && PreMovingDirection[0] == Keys.Down && PreMovingDirection[1] == Keys.Right
+                    || PlayerMovingOblique && PreMovingDirection[1] == Keys.Down && PreMovingDirection[0] == Keys.Right)
+                {
+                    PlayerPressKeyDown = false;
+                    PlayerPressKeyRight = false;
+                    picPlayer.Image = Properties.Resources.NoviceStandFrontRight;
+                }
+                else if (e.KeyCode == Keys.Up)
+                {
+                    PlayerPressKeyUp = false;
                     picPlayer.Image = Properties.Resources.NoviceStandBack;
                 }
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                if (IsPlayerHoldKeyFrontLeft)
+                else if (e.KeyCode == Keys.Down)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceStandFrontLeft;
-                }
-                else if (IsPlayerHoldKeyFrontRight)
-                {
-                    picPlayer.Image = Properties.Resources.NoviceStandFrontRight;
-                }
-                else
-                {
+                    PlayerPressKeyDown = false;
                     picPlayer.Image = Properties.Resources.NoviceStandFront;
                 }
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                if (IsPlayerHoldKeyBackLeft)
+                else if (e.KeyCode == Keys.Left)
                 {
-                    //picPlayer.Image = Properties.Resources.NoviceStandBackLeft;
-                }
-                else if (IsPlayerHoldKeyFrontLeft)
-                {
-                    picPlayer.Image = Properties.Resources.NoviceStandFrontLeft;
-                }
-                else
-                {
+                    PlayerPressKeyLeft = false;
                     picPlayer.Image = Properties.Resources.NoviceStandLeft;
+
                 }
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                if (IsPlayerHoldKeyBackRight)
+                else if (e.KeyCode == Keys.Right)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceStandBackRight;
-                }
-                else if (IsPlayerHoldKeyFrontRight)
-                {
-                    picPlayer.Image = Properties.Resources.NoviceStandFrontRight;
-                }
-                else
-                {
+                    PlayerPressKeyRight = false;
                     picPlayer.Image = Properties.Resources.NoviceStandRight;
                 }
-            }*/
-            //if (e.KeyCode == Keys.Space) IsPlayerPressAttack = false;
+            }
         }
+
         private void tmrCharacterWalking_Tick(object sender, EventArgs e)
         {
             if ((PlayerPressKeyUp && PlayerPressKeyDown) || (PlayerPressKeyLeft && PlayerPressKeyRight))
             {
                 PlayerMoving = false;
+                picPlayer.Image = Properties.Resources.NoviceStandFront;
             }
+
             if (PlayerMoving)
             {
                 if ((PlayerPressKeyUp) && (picPlayer.Top - moveDistance >= pnlMap.Top))
@@ -212,22 +191,22 @@ namespace RukNarok
             {
                 if (PlayerPressKeyUp && PlayerPressKeyLeft)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceWalkBackLeft;
+                    if (picPlayer.Image != Properties.Resources.NoviceWalkBackLeft) picPlayer.Image = Properties.Resources.NoviceWalkBackLeft;
                     PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp && PlayerPressKeyRight)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceWalkBackRight;
+                    if (picPlayer.Image != Properties.Resources.NoviceWalkBackRight) picPlayer.Image = Properties.Resources.NoviceWalkBackRight;
                     PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyLeft)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceWalkFrontLeft;
+                    if (picPlayer.Image != Properties.Resources.NoviceWalkFrontLeft) picPlayer.Image = Properties.Resources.NoviceWalkFrontLeft;
                     PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyRight)
                 {
-                    picPlayer.Image = Properties.Resources.NoviceWalkFrontRight;
+                    if (picPlayer.Image != Properties.Resources.NoviceWalkFrontRight) picPlayer.Image = Properties.Resources.NoviceWalkFrontRight;
                     PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp)
@@ -251,6 +230,19 @@ namespace RukNarok
                     PlayerAnimationChanging = false;
                 }
             }
+
+            if (PlayerPressKeyUp && PlayerPressKeyLeft || PlayerPressKeyUp && PlayerPressKeyRight || PlayerPressKeyDown && PlayerPressKeyLeft || PlayerPressKeyDown && PlayerPressKeyRight)
+            {
+                PlayerMovingOblique = true;
+            }
+            else
+            {
+                PlayerMovingOblique = false;
+            }
+        }
+
+        private void tmrCharacterWalkingStatus_Tick(object sender, EventArgs e)
+        {
         }
 
         //if ((IsPlayerPressAttack))
