@@ -141,6 +141,21 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkBackRight.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandBackLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\grass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackBackLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackBackRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackFrontLeft.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,7 +10,7 @@ namespace RukNarok
     {
         public MainModel()
         {
-            
+
         }
 
         public void Update()

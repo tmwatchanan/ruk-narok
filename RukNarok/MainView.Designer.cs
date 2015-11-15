@@ -32,7 +32,7 @@
             this.pnlMap = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
-            this.tmrCharacterWalkingStatus = new System.Windows.Forms.Timer(this.components);
+            this.tmrCharacterAttacking = new System.Windows.Forms.Timer(this.components);
             this.pnlMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
@@ -49,11 +49,12 @@
             // 
             // picPlayer
             // 
+            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.Image = global::RukNarok.Properties.Resources.NoviceStandFront;
             this.picPlayer.Location = new System.Drawing.Point(0, 0);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(0);
             this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(38, 92);
+            this.picPlayer.Size = new System.Drawing.Size(80, 92);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
@@ -64,10 +65,10 @@
             this.tmrCharacterWalking.Interval = 10;
             this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
             // 
-            // tmrCharacterWalkingStatus
+            // tmrCharacterAttacking
             // 
-            this.tmrCharacterWalkingStatus.Interval = 2000;
-            this.tmrCharacterWalkingStatus.Tick += new System.EventHandler(this.tmrCharacterWalkingStatus_Tick);
+            this.tmrCharacterAttacking.Interval = 200;
+            this.tmrCharacterAttacking.Tick += new System.EventHandler(this.tmrCharacterAttacking_Tick);
             // 
             // MainView
             // 
@@ -81,6 +82,7 @@
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ruk Narok v.0";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlMap.ResumeLayout(false);
@@ -92,9 +94,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMap;
-        private System.Windows.Forms.Timer tmrCharacter;
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.Timer tmrCharacterWalking;
-        private System.Windows.Forms.Timer tmrCharacterWalkingStatus;
+        private System.Windows.Forms.Timer tmrCharacterAttacking;
     }
 }
