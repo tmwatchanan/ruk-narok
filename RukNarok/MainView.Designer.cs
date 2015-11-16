@@ -29,14 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlMap = new System.Windows.Forms.Panel();
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
             this.tmrCharacterAttacking = new System.Windows.Forms.Timer(this.components);
-            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlMap = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.tmrMenu = new System.Windows.Forms.Timer(this.components);
             this.pnlMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tmrCharacterWalking
+            // 
+            this.tmrCharacterWalking.Interval = 10;
+            this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
+            // 
+            // tmrCharacterAttacking
+            // 
+            this.tmrCharacterAttacking.Interval = 200;
+            this.tmrCharacterAttacking.Tick += new System.EventHandler(this.tmrCharacterAttacking_Tick);
             // 
             // pnlMap
             // 
@@ -50,38 +61,31 @@
             this.pnlMap.Size = new System.Drawing.Size(624, 441);
             this.pnlMap.TabIndex = 0;
             // 
-            // tmrCharacterWalking
-            // 
-            this.tmrCharacterWalking.Enabled = true;
-            this.tmrCharacterWalking.Interval = 10;
-            this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
-            // 
-            // tmrCharacterAttacking
-            // 
-            this.tmrCharacterAttacking.Interval = 200;
-            this.tmrCharacterAttacking.Tick += new System.EventHandler(this.tmrCharacterAttacking_Tick);
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.AutoSize = true;
-            this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMenu.BackgroundImage = global::RukNarok.Properties.Resources.MenuBackground;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 324);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(624, 117);
-            this.pnlMenu.TabIndex = 1;
-            // 
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.Image = global::RukNarok.Properties.Resources.NoviceStandFront;
-            this.picPlayer.Location = new System.Drawing.Point(0, 0);
+            this.picPlayer.Location = new System.Drawing.Point(266, 149);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(0);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(80, 92);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMenu.BackgroundImage = global::RukNarok.Properties.Resources.MenuBackground;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 448);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(624, 117);
+            this.pnlMenu.TabIndex = 1;
+            // 
+            // tmrMenu
+            // 
+            this.tmrMenu.Interval = 10;
+            this.tmrMenu.Tick += new System.EventHandler(this.tmrMenu_Tick);
             // 
             // MainView
             // 
@@ -96,10 +100,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ruk Narok v.0";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlMap.ResumeLayout(false);
-            this.pnlMap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             this.ResumeLayout(false);
 
@@ -112,5 +116,6 @@
         private System.Windows.Forms.Timer tmrCharacterWalking;
         private System.Windows.Forms.Timer tmrCharacterAttacking;
         private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Timer tmrMenu;
     }
 }
