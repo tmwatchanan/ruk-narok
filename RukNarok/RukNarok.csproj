@@ -156,6 +156,30 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackFrontLeft.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\InventoryMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\MenuBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\QuestMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\SkillMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\StatusMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\GrassBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Maps\Map1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Maps\Portal.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

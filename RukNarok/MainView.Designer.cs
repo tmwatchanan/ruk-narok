@@ -30,15 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlMap = new System.Windows.Forms.Panel();
-            this.picPlayer = new System.Windows.Forms.PictureBox();
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
             this.tmrCharacterAttacking = new System.Windows.Forms.Timer(this.components);
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.picPlayer = new System.Windows.Forms.PictureBox();
             this.pnlMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMap
             // 
+            this.pnlMap.BackgroundImage = global::RukNarok.Properties.Resources.GrassBG;
+            this.pnlMap.Controls.Add(this.pnlMenu);
             this.pnlMap.Controls.Add(this.picPlayer);
             this.pnlMap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMap.Location = new System.Drawing.Point(0, 0);
@@ -46,6 +49,27 @@
             this.pnlMap.Name = "pnlMap";
             this.pnlMap.Size = new System.Drawing.Size(624, 441);
             this.pnlMap.TabIndex = 0;
+            // 
+            // tmrCharacterWalking
+            // 
+            this.tmrCharacterWalking.Enabled = true;
+            this.tmrCharacterWalking.Interval = 10;
+            this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
+            // 
+            // tmrCharacterAttacking
+            // 
+            this.tmrCharacterAttacking.Interval = 200;
+            this.tmrCharacterAttacking.Tick += new System.EventHandler(this.tmrCharacterAttacking_Tick);
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.AutoSize = true;
+            this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMenu.BackgroundImage = global::RukNarok.Properties.Resources.MenuBackground;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 324);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(624, 117);
+            this.pnlMenu.TabIndex = 1;
             // 
             // picPlayer
             // 
@@ -58,17 +82,6 @@
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            // 
-            // tmrCharacterWalking
-            // 
-            this.tmrCharacterWalking.Enabled = true;
-            this.tmrCharacterWalking.Interval = 10;
-            this.tmrCharacterWalking.Tick += new System.EventHandler(this.tmrCharacterWalking_Tick);
-            // 
-            // tmrCharacterAttacking
-            // 
-            this.tmrCharacterAttacking.Interval = 200;
-            this.tmrCharacterAttacking.Tick += new System.EventHandler(this.tmrCharacterAttacking_Tick);
             // 
             // MainView
             // 
@@ -86,6 +99,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlMap.ResumeLayout(false);
+            this.pnlMap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,5 +111,6 @@
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.Timer tmrCharacterWalking;
         private System.Windows.Forms.Timer tmrCharacterAttacking;
+        private System.Windows.Forms.Panel pnlMenu;
     }
 }

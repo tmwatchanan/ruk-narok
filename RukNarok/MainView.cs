@@ -73,8 +73,6 @@ namespace RukNarok
             mainController.AddModel(mainModel);
             mainModel.AttachObserver(this);
             this.SetController(mainController);
-
-            pnlMap.BackgroundImage = Properties.Resources.grass;
         }
 
         public void SetController(MainController controller)
