@@ -8,5 +8,9 @@ namespace RukNarok
 {
     class Player : Character
     {
+        override protected void Attack()
+        {
+
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace RukNarok
         private bool PlayerAnimationChanging = true;
         private Keys PrePlayerPressKeyUp = Keys.None;
         private Keys PrePlayerPressKeyDown = Keys.None;
-        private enum Direction
+        public enum Direction
         {
             NULL = 0,
             NorthWest = 1,
@@ -56,13 +56,12 @@ namespace RukNarok
             South = 8,
             SouthEast = 9
         };
-        Direction CharacterMovingDirection = Direction.NULL;
+        public Direction CharacterMovingDirection = Direction.NULL;
 
         private bool PlayerPressAttack = false;
         private int attackingTime = 0;
 
         //private const int attackDistance = 2;
-        //private int WeaponShowingTime = 0;
 
         private bool MenuWindow = true;
 
@@ -299,7 +298,9 @@ namespace RukNarok
                     }
                     else if (CharacterMovingDirection == Direction.South)
                     {
-                        if (picPlayer.Image != Properties.Resources.NoviceStandFront) picPlayer.Image = Properties.Resources.NoviceStandFront;
+                        object O = Properties.Resources.ResourceManager.GetObject("NoviceStandFront"); //Return an object from the image chan1.png in the project
+                        //channelPic.Image = (Image)O; //Set the Image property of channelPic to the returned object as Image
+                        if (picPlayer.Image != Properties.Resources.NoviceStandFront) picPlayer.Image = (Image)O;
                     }
                     else if (CharacterMovingDirection == Direction.SouthEast)
                     {
@@ -351,35 +352,6 @@ namespace RukNarok
             }
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        // Paint background with underlying graphics from other controls
-        {
-            base.OnPaintBackground(e);
-            Graphics g = e.Graphics;
-
-            if (Parent != null)
-            {
-                // Take each control in turn
-                int index = Parent.Controls.GetChildIndex(this);
-                for (int i = Parent.Controls.Count - 1; i > index; i--)
-                {
-                    Control c = Parent.Controls[i];
-
-                    // Check it's visible and overlaps this control
-                    if (c.Bounds.IntersectsWith(Bounds) && c.Visible)
-                    {
-                        // Load appearance of underlying control and redraw it on this background
-                        Bitmap bmp = new Bitmap(c.Width, c.Height, g);
-                        c.DrawToBitmap(bmp, c.ClientRectangle);
-                        g.TranslateTransform(c.Left - Left, c.Top - Top);
-                        g.DrawImageUnscaled(bmp, Point.Empty);
-                        g.TranslateTransform(Left - c.Left, Top - c.Top);
-                        bmp.Dispose();
-                    }
-                }
-            }
-        }
-
         private void tmrCharacterAttacking_Tick(object sender, EventArgs e)
         {
             ++attackingTime;
@@ -395,19 +367,20 @@ namespace RukNarok
         {
             if (MenuWindow)
             {
-                if (pnlMenu.Location != new Point(0, 353)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
+                if (pnlMenu.Bottom > pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
                 else tmrMenu.Stop();
             }
             else
             {
-                if (pnlMenu.Location != new Point(0, 441)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
+                if (pnlMenu.Top < pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
                 else tmrMenu.Stop();
             }
         }
 
         private void picStatusMenu_Click(object sender, EventArgs e)
         {
-
+            if (boxStatus.Visible) boxStatus.Visible = false;
+            else boxStatus.Visible = true;
         }
 
         private void picSkillMenu_Click(object sender, EventArgs e)

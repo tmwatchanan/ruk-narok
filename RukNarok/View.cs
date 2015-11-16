@@ -8,6 +8,6 @@ namespace RukNarok
 {
     public interface View
     {
-        void Notify(Model m);
+        void Notify(Model model);
     }
 }

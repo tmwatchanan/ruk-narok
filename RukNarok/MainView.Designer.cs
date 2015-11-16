@@ -29,26 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.tmrCharacterWalking = new System.Windows.Forms.Timer(this.components);
             this.tmrCharacterAttacking = new System.Windows.Forms.Timer(this.components);
             this.tmrMenu = new System.Windows.Forms.Timer(this.components);
             this.pnlMap = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLevel = new System.Windows.Forms.Label();
+            this.boxStatus = new System.Windows.Forms.GroupBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.picQuestMenu = new System.Windows.Forms.PictureBox();
             this.picInventoryMenu = new System.Windows.Forms.PictureBox();
             this.picSkillMenu = new System.Windows.Forms.PictureBox();
             this.picStatusMenu = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.lblLevel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMap.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQuestMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInventoryMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSkillMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatusMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrCharacterWalking
@@ -72,6 +74,7 @@
             this.pnlMap.BackgroundImage = global::RukNarok.Properties.Resources.GrassBG;
             this.pnlMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlMap.Controls.Add(this.panel1);
+            this.pnlMap.Controls.Add(this.boxStatus);
             this.pnlMap.Controls.Add(this.pnlMenu);
             this.pnlMap.Controls.Add(this.picPlayer);
             this.pnlMap.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,26 +84,57 @@
             this.pnlMap.Size = new System.Drawing.Size(800, 600);
             this.pnlMap.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.lblLevel);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 100);
+            this.panel1.TabIndex = 4;
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lblLevel.ForeColor = System.Drawing.Color.White;
+            this.lblLevel.Location = new System.Drawing.Point(74, 8);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(13, 13);
+            this.lblLevel.TabIndex = 3;
+            this.lblLevel.Text = "0";
+            // 
+            // boxStatus
+            // 
+            this.boxStatus.Location = new System.Drawing.Point(769, 130);
+            this.boxStatus.Name = "boxStatus";
+            this.boxStatus.Size = new System.Drawing.Size(470, 308);
+            this.boxStatus.TabIndex = 5;
+            this.boxStatus.TabStop = false;
+            this.boxStatus.Text = "Status";
+            this.boxStatus.Visible = false;
+            // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMenu.BackgroundImage = global::RukNarok.Properties.Resources.MenuBackground;
+            this.pnlMenu.BackgroundImage = global::RukNarok.Properties.Resources.LegendMenu;
             this.pnlMenu.Controls.Add(this.picQuestMenu);
             this.pnlMenu.Controls.Add(this.picInventoryMenu);
             this.pnlMenu.Controls.Add(this.picSkillMenu);
             this.pnlMenu.Controls.Add(this.picStatusMenu);
-            this.pnlMenu.Location = new System.Drawing.Point(88, 512);
+            this.pnlMenu.Location = new System.Drawing.Point(72, 521);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(624, 88);
+            this.pnlMenu.Size = new System.Drawing.Size(655, 79);
             this.pnlMenu.TabIndex = 1;
             // 
             // picQuestMenu
             // 
             this.picQuestMenu.Image = global::RukNarok.Properties.Resources.QuestMenu;
-            this.picQuestMenu.Location = new System.Drawing.Point(441, 18);
+            this.picQuestMenu.Location = new System.Drawing.Point(442, 15);
             this.picQuestMenu.Name = "picQuestMenu";
-            this.picQuestMenu.Size = new System.Drawing.Size(61, 70);
+            this.picQuestMenu.Size = new System.Drawing.Size(57, 61);
             this.picQuestMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picQuestMenu.TabIndex = 4;
             this.picQuestMenu.TabStop = false;
@@ -109,9 +143,9 @@
             // picInventoryMenu
             // 
             this.picInventoryMenu.Image = global::RukNarok.Properties.Resources.InventoryMenu;
-            this.picInventoryMenu.Location = new System.Drawing.Point(341, 9);
+            this.picInventoryMenu.Location = new System.Drawing.Point(331, 8);
             this.picInventoryMenu.Name = "picInventoryMenu";
-            this.picInventoryMenu.Size = new System.Drawing.Size(70, 88);
+            this.picInventoryMenu.Size = new System.Drawing.Size(62, 79);
             this.picInventoryMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInventoryMenu.TabIndex = 3;
             this.picInventoryMenu.TabStop = false;
@@ -120,7 +154,7 @@
             // picSkillMenu
             // 
             this.picSkillMenu.Image = global::RukNarok.Properties.Resources.SkillMenu;
-            this.picSkillMenu.Location = new System.Drawing.Point(225, 3);
+            this.picSkillMenu.Location = new System.Drawing.Point(221, -1);
             this.picSkillMenu.Name = "picSkillMenu";
             this.picSkillMenu.Size = new System.Drawing.Size(75, 97);
             this.picSkillMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,34 +178,13 @@
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.picPlayer.Image = global::RukNarok.Properties.Resources.NoviceStandFront;
-            this.picPlayer.Location = new System.Drawing.Point(279, 150);
+            this.picPlayer.Location = new System.Drawing.Point(350, 227);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(0);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(80, 92);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            // 
-            // lblLevel
-            // 
-            this.lblLevel.AutoSize = true;
-            this.lblLevel.BackColor = System.Drawing.Color.Transparent;
-            this.lblLevel.ForeColor = System.Drawing.Color.White;
-            this.lblLevel.Location = new System.Drawing.Point(74, 8);
-            this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(13, 13);
-            this.lblLevel.TabIndex = 3;
-            this.lblLevel.Text = "0";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::RukNarok.Properties.Resources.StatusBar;
-            this.panel1.Controls.Add(this.lblLevel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 75);
-            this.panel1.TabIndex = 4;
             // 
             // MainView
             // 
@@ -190,14 +203,14 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlMap.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picQuestMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInventoryMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSkillMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatusMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +229,6 @@
         private System.Windows.Forms.PictureBox picStatusMenu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.GroupBox boxStatus;
     }
 }
