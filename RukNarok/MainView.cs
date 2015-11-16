@@ -64,7 +64,7 @@ namespace RukNarok
         //private const int attackDistance = 2;
         //private int WeaponShowingTime = 0;
 
-        private bool PlayerPressMenu = false;
+        private bool MenuWindow = true;
 
         public MainView()
         {
@@ -80,13 +80,6 @@ namespace RukNarok
         {
             tmrCharacterWalking.Interval = 10;
             tmrCharacterWalking.Start();
-
-            Bitmap animImage = new Bitmap(Properties.Resources.NoviceWalkFrontRight);
-            Graphics g = Graphics.FromHwnd(Handle);
-            System.Threading.Thread.Sleep(100);
-            g.DrawImage(animImage, 50, 50);
-            Graphics.FromImage(animImage);
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
         }
 
         public void SetController(MainController controller)
@@ -144,8 +137,8 @@ namespace RukNarok
 
             if (e.KeyCode == Keys.M)
             {
-                if (!PlayerPressMenu) PlayerPressMenu = true;
-                else PlayerPressMenu = false;
+                if (!MenuWindow) MenuWindow = true;
+                else MenuWindow = false;
                 tmrMenu.Start();
             }
         }
@@ -207,8 +200,10 @@ namespace RukNarok
                 {
                     picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - moveDistance);
                 }
-                if ((PlayerPressKeyDown) && (picPlayer.Bottom + moveDistance <= pnlMap.Bottom))
+                if ((PlayerPressKeyDown))
                 {
+                    if ((MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMenu.Top) ||
+                        (!MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMap.Bottom))
                     picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + moveDistance);
                 }
                 if ((PlayerPressKeyLeft) && (picPlayer.Left - moveDistance >= pnlMap.Left))
@@ -396,49 +391,38 @@ namespace RukNarok
             }
         }
 
-        //
-        private Bitmap characterImage = new Bitmap(Properties.Resources.NoviceWalkDown);
-        private bool currentlyAnimating = false;
-
-        public void CharacterAnimation()
-        {
-            if (!currentlyAnimating)
-            {
-                ImageAnimator.Animate(characterImage, new EventHandler(this.OnFrameChanged));
-                currentlyAnimating = true;
-            }
-        }
-        private void OnFrameChanged(object o, EventArgs e)
-        {
-            this.Invalidate();
-        }
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(characterImage, new Point(0, 0));
-            CharacterAnimation();
-            ImageAnimator.UpdateFrames();
-            base.OnPaint(e);
-        }
-
-        private void Paint_Event(object sender, PaintEventArgs e)
-        {
-            //this.DoubleBuffered = chkDoubleBuffer.Checked;
-            Graphics g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-        }
-
         private void tmrMenu_Tick(object sender, EventArgs e)
         {
-            if (PlayerPressMenu)
+            if (MenuWindow)
             {
-                if (pnlMenu.Location != new Point(0, 376)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
+                if (pnlMenu.Location != new Point(0, 353)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
                 else tmrMenu.Stop();
             }
             else
             {
-                if (pnlMenu.Location != new Point(0, 448)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
+                if (pnlMenu.Location != new Point(0, 441)) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
                 else tmrMenu.Stop();
             }
+        }
+
+        private void picStatusMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picSkillMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picInventoryMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picQuestMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
