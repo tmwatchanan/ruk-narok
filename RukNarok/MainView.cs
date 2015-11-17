@@ -95,6 +95,7 @@ namespace RukNarok
             mainController = controller;
         }
 
+        public event EventHandler PlayerWalking;
         public void Notify(Model m)
         {
             MapModel map = (MapModel)m;

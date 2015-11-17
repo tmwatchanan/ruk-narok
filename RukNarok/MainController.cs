@@ -10,9 +10,13 @@ namespace RukNarok
     {
         public override void ActionPerformed(int action)
         {
-            foreach (Model m in ModelList)
+            foreach (Model model in ModelList)
             {
+                if (model is MapModel)
+                {
+                    MapModel mapModel = (MapModel)model;
 
+                }
             }
         }
     }
