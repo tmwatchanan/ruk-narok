@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace RukNarok
 {
-    public class MainController : Controller
+    class Monster
     {
-        public override void ActionPerformed(int action)
+        public Monster()
         {
-            foreach (Model m in ModelList)
-            {
 
-            }
         }
     }
 }

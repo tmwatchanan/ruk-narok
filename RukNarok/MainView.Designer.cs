@@ -34,7 +34,8 @@
             this.tmrCharacterAttacking = new System.Windows.Forms.Timer(this.components);
             this.tmrMenu = new System.Windows.Forms.Timer(this.components);
             this.pnlMap = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHealthBar = new System.Windows.Forms.Label();
+            this.pnlAvatar = new System.Windows.Forms.Panel();
             this.lblLevel = new System.Windows.Forms.Label();
             this.boxStatus = new System.Windows.Forms.GroupBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -44,7 +45,7 @@
             this.picStatusMenu = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.pnlMap.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlAvatar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQuestMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInventoryMenu)).BeginInit();
@@ -73,7 +74,8 @@
             this.pnlMap.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMap.BackgroundImage = global::RukNarok.Properties.Resources.GrassBG;
             this.pnlMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlMap.Controls.Add(this.panel1);
+            this.pnlMap.Controls.Add(this.lblHealthBar);
+            this.pnlMap.Controls.Add(this.pnlAvatar);
             this.pnlMap.Controls.Add(this.boxStatus);
             this.pnlMap.Controls.Add(this.pnlMenu);
             this.pnlMap.Controls.Add(this.picPlayer);
@@ -84,15 +86,28 @@
             this.pnlMap.Size = new System.Drawing.Size(800, 600);
             this.pnlMap.TabIndex = 0;
             // 
-            // panel1
+            // lblHealthBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.lblLevel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 100);
-            this.panel1.TabIndex = 4;
+            this.lblHealthBar.AutoSize = true;
+            this.lblHealthBar.BackColor = System.Drawing.Color.Red;
+            this.lblHealthBar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHealthBar.Location = new System.Drawing.Point(355, 205);
+            this.lblHealthBar.Name = "lblHealthBar";
+            this.lblHealthBar.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.lblHealthBar.Size = new System.Drawing.Size(72, 13);
+            this.lblHealthBar.TabIndex = 6;
+            this.lblHealthBar.Text = "HP";
+            this.lblHealthBar.Visible = false;
+            // 
+            // pnlAvatar
+            // 
+            this.pnlAvatar.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAvatar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlAvatar.BackgroundImage")));
+            this.pnlAvatar.Controls.Add(this.lblLevel);
+            this.pnlAvatar.Location = new System.Drawing.Point(0, 0);
+            this.pnlAvatar.Name = "pnlAvatar";
+            this.pnlAvatar.Size = new System.Drawing.Size(100, 100);
+            this.pnlAvatar.TabIndex = 4;
             // 
             // lblLevel
             // 
@@ -203,8 +218,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlMap.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlMap.PerformLayout();
+            this.pnlAvatar.ResumeLayout(false);
+            this.pnlAvatar.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picQuestMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInventoryMenu)).EndInit();
@@ -227,8 +243,9 @@
         private System.Windows.Forms.PictureBox picInventoryMenu;
         private System.Windows.Forms.PictureBox picSkillMenu;
         private System.Windows.Forms.PictureBox picStatusMenu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlAvatar;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.GroupBox boxStatus;
+        private System.Windows.Forms.Label lblHealthBar;
     }
 }

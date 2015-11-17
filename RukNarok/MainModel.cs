@@ -8,11 +8,8 @@ namespace RukNarok
 {
     class MainModel : Model
     {
-        
-
         public MainModel()
         {
-
         }
 
         public void Update()

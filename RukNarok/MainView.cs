@@ -33,6 +33,7 @@ namespace RukNarok
 
         private MainController mainController;
         private MainModel mainModel;
+        private MapModel mapModel;
 
         private const int moveDistance = 3;
         private bool PlayerPressKeyUp = false;
@@ -68,11 +69,19 @@ namespace RukNarok
         public MainView()
         {
             InitializeComponent();
+
             mainController = new MainController();
+            this.SetController(mainController);
+
             mainModel = new MainModel();
             mainController.AddModel(mainModel);
             mainModel.AttachObserver(this);
-            this.SetController(mainController);
+
+            mapModel = new MapModel();
+            mainController.AddModel(mapModel);
+            mapModel.AttachObserver(this);
+
+            Notify(mapModel);
         }
 
         private void MainView_Load(object sender, EventArgs e)
@@ -88,7 +97,8 @@ namespace RukNarok
 
         public void Notify(Model m)
         {
-
+            MapModel map = (MapModel)m;
+            ChangeMap(map);
         }
         
         private void MainView_KeyDown(object sender, KeyEventArgs e)
@@ -132,6 +142,7 @@ namespace RukNarok
             {
                 PlayerPressAttack = true;
                 tmrCharacterAttacking.Start();
+                lblHealthBar.Visible = true;
             }
 
             if (e.KeyCode == Keys.M)
@@ -350,6 +361,9 @@ namespace RukNarok
                 //    WeaponShowingTime = 0;
                 //}
             }
+
+            lblHealthBar.Top = picPlayer.Top - 15;
+            lblHealthBar.Left = picPlayer.Left + 5;
         }
 
         private void tmrCharacterAttacking_Tick(object sender, EventArgs e)
@@ -361,6 +375,11 @@ namespace RukNarok
                 PlayerPressAttack = false;
                 attackingTime = 0;
             }
+            SolidBrush myBrush = new SolidBrush(Color.Red);
+            Graphics formGraphics = this.CreateGraphics();
+            formGraphics.FillRectangle(myBrush, new Rectangle(50, 50, 200, 300));
+            myBrush.Dispose();
+            formGraphics.Dispose();
         }
 
         private void tmrMenu_Tick(object sender, EventArgs e)
@@ -396,6 +415,11 @@ namespace RukNarok
         private void picQuestMenu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ChangeMap(MapModel mModel)
+        {
+            pnlMap.BackgroundImage = mModel.MapList[mModel.CurrentMap].Background;
         }
     }
 }

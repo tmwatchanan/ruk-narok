@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="MainController.cs" />
     <Compile Include="MainModel.cs" />
     <Compile Include="MainView.cs">
@@ -56,7 +57,10 @@
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Map.cs" />
+    <Compile Include="MapModel.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

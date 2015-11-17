@@ -12,19 +12,49 @@ namespace RukNarok
         private int hp;
         private int exp;
         private int attackDamage;
-        private int x;
-        private int y;
+        private Location position;
         private string className;
+
+        internal string Name
+        {
+            get;
+            set;
+        }
+        internal int HP
+        {
+            get;
+            set;
+        }
+        internal int EXP
+        {
+            get;
+            set;
+        }
+        internal int AttackDamage
+        {
+            get;
+            set;
+        }
+        internal Location Position
+        {
+            get;
+            set;
+        }
+        internal string ClassName
+        {
+            get;
+            set;
+        }
         
         public Character()
         {
-            name = "Unknown";
-            hp = -1;
-            exp = -1;
-            attackDamage = 0;
-            x = 0;
-            y = 0;
-            className = "Novice";
+            Name = "Unknown";
+            HP = -1;
+            EXP = -1;
+            AttackDamage = 0;
+            Position.X = 0;
+            Position.Y = 0;
+            ClassName = "Novice";
         }
 
         abstract protected void Attack();
