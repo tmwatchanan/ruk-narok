@@ -163,9 +163,79 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandBack {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandBackLeft {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandBackLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandBackRight {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandBackRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NoviceStandEast {
             get {
                 object obj = ResourceManager.GetObject("NoviceStandEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandFront {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandFront", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandFrontLeft {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandFrontLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandFrontRight {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandFrontRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandLeft {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +266,16 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap NoviceStandNorthWest {
             get {
                 object obj = ResourceManager.GetObject("NoviceStandNorthWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoviceStandRight {
+            get {
+                object obj = ResourceManager.GetObject("NoviceStandRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

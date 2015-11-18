@@ -42,13 +42,13 @@ namespace RukNarok
             get;
             set;
         }
-        private bool playerMoving;
+        private bool playerMoving = true;
         internal bool PlayerMoving
         {
             get;
             set;
         }
-        private bool playerAnimationChanging;
+        private bool playerAnimationChanging = true;
         internal bool PlayerAnimationChanging
         {
             get;
@@ -94,7 +94,7 @@ namespace RukNarok
             MenuStatus = true;
             MenuStatusChanging = false;
 
-            PlayerDirection = Direction.NULL;
+            PlayerDirection = Direction.South;//Direction.NULL
             PlayerMoving = true;
             PlayerAnimationChanging = true;
             PlayerMovingDirection = new bool[10];

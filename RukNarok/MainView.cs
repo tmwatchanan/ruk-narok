@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Timers;
 
 namespace RukNarok
 {
@@ -34,12 +34,21 @@ namespace RukNarok
         private MainController mainController;
         private MainModel mainModel;
         private MapModel mapModel;
-        
+
+        private const int moveDistance = 3;
+        private bool PlayerPressKeyUp = false;
+        private bool PlayerPressKeyDown = false;
+        private bool PlayerPressKeyLeft = false;
+        private bool PlayerPressKeyRight = false;
+        private bool PlayerMoving = true;
+        private bool PlayerAnimationChanging = true;
         private Keys PrePlayerPressKeyUp = Keys.None;
         private Keys PrePlayerPressKeyDown = Keys.None;
 
         private bool PlayerPressAttack = false;
         private int attackingTime = 0;
+        
+        private bool MenuWindow = true;
 
         public MainView()
         {
@@ -55,6 +64,8 @@ namespace RukNarok
             mapModel = new MapModel();
             mainController.AddModel(mapModel);
             mapModel.AttachObserver(this);
+
+            Notify(mapModel);
         }
 
         private void MainView_Load(object sender, EventArgs e)
@@ -67,52 +78,49 @@ namespace RukNarok
         {
             mainController = controller;
         }
-    
-        public void Notify(Model model)
+
+        public event EventHandler PlayerWalking;
+        public void Notify(Model m)
         {
-            if (model is MapModel)
-            {
-                MapModel map = (MapModel)model;
-                OnMapChanged(/*map*/);
-            }
-            else if (model is MainModel)
-            {
-                if (mainModel.MenuStatusChanging) tmrMenu.Start();
-                if (mainModel.PlayerMoving) OnPlayerMoved();
-            }
+            MapModel map = (MapModel)m;
+            OnMapChanged();
         }
 
         private void MainView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (mainModel.PlayerPressedKeyDown != e.KeyCode)
+            if (PrePlayerPressKeyDown != e.KeyCode)
             {
-                mainModel.PlayerAnimationChanging = true;
+                PlayerAnimationChanging = true;
             }
-            if (mainModel.PlayerPressedKeyDown == e.KeyCode)
+            if (PrePlayerPressKeyUp == e.KeyCode)
             {
-                mainModel.PlayerAnimationChanging = true;
-                mainModel.PlayerPressedKeyDown = Keys.None;
+                PlayerAnimationChanging = true;
+                PrePlayerPressKeyUp = Keys.None;
             }
 
             if (e.KeyCode == Keys.Up)
             {
-                mainModel.PressUp = true;
-                mainController.PlayerWalkingPressed(e.KeyCode);
+                PlayerPressKeyUp = true;
+                PrePlayerPressKeyDown = Keys.Up;
+                PlayerMoving = true;
             }
             if (e.KeyCode == Keys.Down)
             {
-                mainModel.PressDown = true;
-                mainController.PlayerWalkingPressed(e.KeyCode);
+                PlayerPressKeyDown = true;
+                PrePlayerPressKeyDown = Keys.Down;
+                PlayerMoving = true;
             }
             if (e.KeyCode == Keys.Left)
             {
-                mainModel.PressLeft = true;
-                mainController.PlayerWalkingPressed(e.KeyCode);
+                PlayerPressKeyLeft = true;
+                PrePlayerPressKeyDown = Keys.Left;
+                PlayerMoving = true;
             }
             if (e.KeyCode == Keys.Right)
             {
-                mainModel.PressRight = true;
-                mainController.PlayerWalkingPressed(e.KeyCode);
+                PlayerPressKeyRight = true;
+                PrePlayerPressKeyDown = Keys.Right;
+                PlayerMoving = true;
             }
 
             if (e.KeyCode == Keys.Space)
@@ -124,42 +132,35 @@ namespace RukNarok
 
             if (e.KeyCode == Keys.M)
             {
-                mainController.ToggleMenu();
-            }
-
-            if (e.KeyCode == Keys.NumPad0)
-            {
-                mainController.MapChanged(MainController.MapZero);
-            }
-            else if (e.KeyCode == Keys.NumPad1)
-            {
-                mainController.MapChanged(MainController.MapOne);
+                if (!MenuWindow) MenuWindow = true;
+                else MenuWindow = false;
+                tmrMenu.Start();
             }
         }
-        
+
         private void MainView_KeyUp(object sender, KeyEventArgs e)
         {
-            mainModel.PlayerAnimationChanging = true;
-            mainModel.PlayerMoving = true;
+            PlayerAnimationChanging = true;
+            PlayerMoving = true;
             if (e.KeyCode == Keys.Up)
             {
-                mainModel.PressUp = false;
-                mainController.PlayerWalkingReleased(e.KeyCode);
+                PlayerPressKeyUp = false;
+                PrePlayerPressKeyUp = Keys.Up;
             }
             if (e.KeyCode == Keys.Down)
             {
-                mainModel.PressDown = false;
-                mainController.PlayerWalkingReleased(e.KeyCode);
+                PlayerPressKeyDown = false;
+                PrePlayerPressKeyUp = Keys.Down;
             }
             if (e.KeyCode == Keys.Left)
             {
-                mainModel.PressLeft = false;
-                mainController.PlayerWalkingReleased(e.KeyCode);
+                PlayerPressKeyLeft = false;
+                PrePlayerPressKeyUp = Keys.Left;
             }
             if (e.KeyCode == Keys.Right)
             {
-                mainModel.PressRight = false;
-                mainController.PlayerWalkingReleased(e.KeyCode);
+                PlayerPressKeyRight = false;
+                PrePlayerPressKeyUp = Keys.Right;
             }
         }
 
@@ -173,96 +174,85 @@ namespace RukNarok
             else if (size < 1) reduce = false;
             this.Invalidate();
 
-            bool PlayerPressKeyUp = mainModel.PlayerMovingDirection[2];
-            bool PlayerPressKeyDown = mainModel.PlayerMovingDirection[8];
-            bool PlayerPressKeyLeft = mainModel.PlayerMovingDirection[4];
-            bool PlayerPressKeyRight = mainModel.PlayerMovingDirection[6];
-
-            if (mainModel.PlayerMoving && !PlayerPressAttack)
+            if (PlayerMoving && !PlayerPressAttack)
             {
-                
-                if ((mainModel.PressUp) && (!IsPlayerOverTop))
+                if ((PlayerPressKeyUp) && (picPlayer.Top - moveDistance >= pnlMap.Top))
                 {
-                    mainController.PlayerMoved(Direction.North);
-                    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - mainModel.MoveDistance);
+                    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - moveDistance);
                 }
-                if ((mainModel.PressDown))
+                if ((PlayerPressKeyDown))
                 {
-                    mainController.PlayerMoved(Direction.South);
-                    if ((mainModel.MenuStatus) && (!IsPlayerOverMenu) || (!mainModel.MenuStatus) && (!IsPlayerOverBottom))
-                    {
-                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + mainModel.MoveDistance);
-                    }
+                    if ((MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMenu.Top) ||
+                        (!MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMap.Bottom))
+                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + moveDistance);
                 }
-                if ((mainModel.PressLeft) && (!IsPlayerOverLeft))
+                if ((PlayerPressKeyLeft) && (picPlayer.Left - moveDistance >= pnlMap.Left))
                 {
-                    mainController.PlayerMoved(Direction.West);
-                    picPlayer.Location = new Point(picPlayer.Left - mainModel.MoveDistance, picPlayer.Top);
+                    picPlayer.Location = new Point(picPlayer.Left - moveDistance, picPlayer.Top);
                 }
-                if ((mainModel.PressRight) && (!IsPlayerOverRight))
+                if ((PlayerPressKeyRight) && (picPlayer.Right + moveDistance <= pnlMap.Right))
                 {
-                    mainController.PlayerMoved(Direction.East);
-                    picPlayer.Location = new Point(picPlayer.Left + mainModel.MoveDistance, picPlayer.Top);
+                    picPlayer.Location = new Point(picPlayer.Left + moveDistance, picPlayer.Top);
                 }
             }
-            if (mainModel.PlayerAnimationChanging && !PlayerPressAttack)
+            if (PlayerAnimationChanging && !PlayerPressAttack)
             {
                 if (PlayerPressKeyUp && PlayerPressKeyLeft)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkBackLeft) picPlayer.Image = Properties.Resources.NoviceWalkBackLeft;
-                    mainController.PlayerDirectionChanged(Direction.NorthWest);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.NorthWest;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp && PlayerPressKeyRight)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkBackRight) picPlayer.Image = Properties.Resources.NoviceWalkBackRight;
-                    mainController.PlayerDirectionChanged(Direction.NorthEast);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.NorthEast;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyLeft)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkFrontLeft) picPlayer.Image = Properties.Resources.NoviceWalkFrontLeft;
-                    mainController.PlayerDirectionChanged(Direction.SouthWest);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.SouthWest;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyRight)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkFrontRight) picPlayer.Image = Properties.Resources.NoviceWalkFrontRight;
-                    mainController.PlayerDirectionChanged(Direction.SouthEast);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.SouthEast;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkBack) picPlayer.Image = Properties.Resources.NoviceWalkBack;
-                    mainController.PlayerDirectionChanged(Direction.North);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.North;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkDown) picPlayer.Image = Properties.Resources.NoviceWalkDown;
-                    mainController.PlayerDirectionChanged(Direction.South);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.South;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyLeft)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkLeft) picPlayer.Image = Properties.Resources.NoviceWalkLeft;
-                    mainController.PlayerDirectionChanged(Direction.West);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.West;
+                    PlayerAnimationChanging = false;
                 }
                 else if (PlayerPressKeyRight)
                 {
                     if (picPlayer.Image != Properties.Resources.NoviceWalkRight) picPlayer.Image = Properties.Resources.NoviceWalkRight;
-                    mainController.PlayerDirectionChanged(Direction.East);
-                    mainModel.PlayerAnimationChanging = false;
+                    mainModel.PlayerDirection = Direction.East;
+                    PlayerAnimationChanging = false;
                 }
             }
             if (!PlayerPressKeyUp && !PlayerPressKeyDown && !PlayerPressKeyLeft && !PlayerPressKeyRight && !PlayerPressAttack)
             {
-                mainModel.PlayerMoving = false;
-                if (!mainModel.PlayerMoving)
+                PlayerMoving = false;
+                if (!PlayerMoving)
                 {
-                    mainModel.PlayerPressedKeyUp = Keys.None;
-                    mainModel.PlayerPressedKeyDown = Keys.None;
+                    PrePlayerPressKeyUp = Keys.None;
+                    PrePlayerPressKeyDown = Keys.None;
                     OnPlayerStandStill(mainModel.PlayerDirection);
                 }
             }
@@ -309,7 +299,16 @@ namespace RukNarok
 
         private void tmrMenu_Tick(object sender, EventArgs e)
         {
-            OnMenuToggled();
+            if (MenuWindow)
+            {
+                if (pnlMenu.Bottom > pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
+                else tmrMenu.Stop();
+            }
+            else
+            {
+                if (pnlMenu.Top < pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
+                else tmrMenu.Stop();
+            }
         }
 
         private void picStatusMenu_Click(object sender, EventArgs e)
@@ -320,7 +319,7 @@ namespace RukNarok
 
         private void picSkillMenu_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void picInventoryMenu_Click(object sender, EventArgs e)
