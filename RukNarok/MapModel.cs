@@ -16,6 +16,9 @@ namespace RukNarok
         private Map one = new Map(1);
         private Map two = new Map(2);
 
+        public const int WarpLeft = 0;
+        public const int WarpRight = 1;
+
         internal List<Map> MapList
         {
             get;
@@ -26,6 +29,7 @@ namespace RukNarok
             get;
             set;
         }
+        
 
         public MapModel()
         {

@@ -118,71 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Backgrounds\grass.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceAttackFrontRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceAttackFrontRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandBackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandBackLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandBackRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandBackRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandFront.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandFrontLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandFrontLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandFrontRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandFrontRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceStandRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceStandRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkBackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkBackLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkBackRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkBackRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkDown1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkFrontLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkFrontLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkFrontRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkFrontRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceWalkRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceWalkRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceAttackBackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceAttackBackLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NoviceAttackBackRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceAttackBackRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoviceAttackFrontLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Player\Novice\NoviceAttackFrontLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GrassBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Backgrounds\GrassBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,19 +142,97 @@
   <data name="MenuBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\MenuBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SkillMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\SkillMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\StatusMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceAttackFrontLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceAttackFrontLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceAttackFrontRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceAttackFrontRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandEast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandNorth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandNorth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandNorthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandNorthEast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandNorthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandNorthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandSouth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandSouth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandSouthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandSouthEast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceStandWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceStandWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkNorth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkNorth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkNorthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkNorthEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkNorthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkNorthWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkSouth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkSouth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkSouthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkSouthEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkSouthWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Portal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Maps\Portal.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuestMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\QuestMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SkillMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Interfaces\SkillMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoviceWalkBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StatusBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Interfaces\StatusBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoviceWalkBackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkBackLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StatusMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Interfaces\StatusMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoviceWalkBackRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkBackRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkEast1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkFrontLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkFrontLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkFrontRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkFrontRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoviceWalkRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Player\Novice\NoviceWalkRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

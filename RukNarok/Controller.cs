@@ -19,9 +19,18 @@ namespace RukNarok
         {
             ModelList.Add(model);
         }
-
-        // virtual keyword allow the method to be overriden
+        
         public virtual void ActionPerformed(int action)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public virtual void MapChanged(int mapStage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void ToggleMenu()
         {
             throw new NotImplementedException();
         }

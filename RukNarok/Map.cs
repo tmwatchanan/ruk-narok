@@ -43,7 +43,7 @@ namespace RukNarok
                     }
                 case 2:
                     {
-                        Background = Properties.Resources.grass;
+                        Background = Properties.Resources.GrassBG;
                         break;
                     }
                 default:

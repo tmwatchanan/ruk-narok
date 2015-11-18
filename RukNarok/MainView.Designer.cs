@@ -44,6 +44,7 @@
             this.picSkillMenu = new System.Windows.Forms.PictureBox();
             this.picStatusMenu = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlMap.SuspendLayout();
             this.pnlAvatar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -74,6 +75,7 @@
             this.pnlMap.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMap.BackgroundImage = global::RukNarok.Properties.Resources.GrassBG;
             this.pnlMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlMap.Controls.Add(this.label1);
             this.pnlMap.Controls.Add(this.lblHealthBar);
             this.pnlMap.Controls.Add(this.pnlAvatar);
             this.pnlMap.Controls.Add(this.boxStatus);
@@ -146,7 +148,7 @@
             // 
             // picQuestMenu
             // 
-            this.picQuestMenu.Image = global::RukNarok.Properties.Resources.QuestMenu;
+            this.picQuestMenu.Image = ((System.Drawing.Image)(resources.GetObject("picQuestMenu.Image")));
             this.picQuestMenu.Location = new System.Drawing.Point(442, 15);
             this.picQuestMenu.Name = "picQuestMenu";
             this.picQuestMenu.Size = new System.Drawing.Size(57, 61);
@@ -192,7 +194,7 @@
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picPlayer.Image = global::RukNarok.Properties.Resources.NoviceStandFront;
+            this.picPlayer.Image = global::RukNarok.Properties.Resources.NoviceStandSouth;
             this.picPlayer.Location = new System.Drawing.Point(350, 227);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(0);
             this.picPlayer.Name = "picPlayer";
@@ -200,6 +202,15 @@
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(293, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
             // 
             // MainView
             // 
@@ -247,5 +258,6 @@
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.GroupBox boxStatus;
         private System.Windows.Forms.Label lblHealthBar;
+        private System.Windows.Forms.Label label1;
     }
 }

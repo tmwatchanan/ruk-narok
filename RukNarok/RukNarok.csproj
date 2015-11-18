@@ -193,6 +193,54 @@
   <ItemGroup>
     <None Include="Properties\Images\Interfaces\LegendMenu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandEast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandNorth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandNorthEast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandNorthWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandSouth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandSouthEast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandSouthWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceStandWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkNorth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkNorthEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkNorthWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkSouth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkSouthEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkSouthWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceWalkWest.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

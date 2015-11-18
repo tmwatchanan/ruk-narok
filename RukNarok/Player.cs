@@ -8,7 +8,19 @@ namespace RukNarok
 {
     class Player : Character
     {
-        override protected void Attack()
+        private string className;
+        internal string ClassName
+        {
+            get;
+            set;
+        }
+
+        public Player() : base()
+        {
+            ClassName = "Unknown";
+        }
+
+        protected void Attack()
         {
 
         }

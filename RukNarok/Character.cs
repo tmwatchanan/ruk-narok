@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace RukNarok
 {
-    abstract class Character
+    class Character
     {
         private string name;
         private int hp;
         private int exp;
         private int attackDamage;
         private Location position;
-        private string className;
 
         internal string Name
         {
@@ -40,11 +39,6 @@ namespace RukNarok
             get;
             set;
         }
-        internal string ClassName
-        {
-            get;
-            set;
-        }
         
         public Character()
         {
@@ -52,11 +46,8 @@ namespace RukNarok
             HP = -1;
             EXP = -1;
             AttackDamage = 0;
-            Position.X = 0;
-            Position.Y = 0;
-            ClassName = "Novice";
+            //Position.X = 0;
+            //Position.Y = 0;
         }
-
-        abstract protected void Attack();
     }
 }
