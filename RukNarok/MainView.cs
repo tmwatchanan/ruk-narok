@@ -176,21 +176,20 @@ namespace RukNarok
 
             if (PlayerMoving && !PlayerPressAttack)
             {
-                if ((PlayerPressKeyUp) && (picPlayer.Top - moveDistance >= pnlMap.Top))
+                if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
                 {
                     picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - moveDistance);
                 }
                 if ((PlayerPressKeyDown))
                 {
-                    if ((MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMenu.Top) ||
-                        (!MenuWindow) && (picPlayer.Bottom + moveDistance <= pnlMap.Bottom))
+                    if ((MenuWindow) && (!IsPlayerOverMenu) || (!MenuWindow) && (!IsPlayerOverBottom))
                         picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + moveDistance);
                 }
-                if ((PlayerPressKeyLeft) && (picPlayer.Left - moveDistance >= pnlMap.Left))
+                if ((PlayerPressKeyLeft) && (!IsPlayerOverLeft))
                 {
                     picPlayer.Location = new Point(picPlayer.Left - moveDistance, picPlayer.Top);
                 }
-                if ((PlayerPressKeyRight) && (picPlayer.Right + moveDistance <= pnlMap.Right))
+                if ((PlayerPressKeyRight) && (!IsPlayerOverRight))
                 {
                     picPlayer.Location = new Point(picPlayer.Left + moveDistance, picPlayer.Top);
                 }
