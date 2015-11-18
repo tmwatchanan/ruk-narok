@@ -83,11 +83,7 @@ namespace RukNarok
             set;
         }
 
-        private const int moveDistance = 3;
-        internal int MoveDistance
-        {
-            get;
-        }
+        public const int MoveDistance = 3;
 
         public MainModel()
         {

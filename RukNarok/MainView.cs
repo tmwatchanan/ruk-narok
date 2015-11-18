@@ -34,8 +34,7 @@ namespace RukNarok
         private MainController mainController;
         private MainModel mainModel;
         private MapModel mapModel;
-
-        private const int moveDistance = 3;
+        
         private bool PlayerPressKeyUp = false;
         private bool PlayerPressKeyDown = false;
         private bool PlayerPressKeyLeft = false;
@@ -178,20 +177,20 @@ namespace RukNarok
             {
                 if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
                 {
-                    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - moveDistance);
+                    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - MainModel.MoveDistance);
                 }
                 if ((PlayerPressKeyDown))
                 {
                     if ((MenuWindow) && (!IsPlayerOverMenu) || (!MenuWindow) && (!IsPlayerOverBottom))
-                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + moveDistance);
+                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + MainModel.MoveDistance);
                 }
                 if ((PlayerPressKeyLeft) && (!IsPlayerOverLeft))
                 {
-                    picPlayer.Location = new Point(picPlayer.Left - moveDistance, picPlayer.Top);
+                    picPlayer.Location = new Point(picPlayer.Left - MainModel.MoveDistance, picPlayer.Top);
                 }
                 if ((PlayerPressKeyRight) && (!IsPlayerOverRight))
                 {
-                    picPlayer.Location = new Point(picPlayer.Left + moveDistance, picPlayer.Top);
+                    picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top);
                 }
             }
             if (PlayerAnimationChanging && !PlayerPressAttack)
@@ -376,35 +375,35 @@ namespace RukNarok
         {
             get
             {
-                return (picPlayer.Top - mainModel.MoveDistance >= pnlMap.Top) ? false : true;
+                return (picPlayer.Top - MainModel.MoveDistance >= pnlMap.Top) ? false : true;
             }
         }
         private bool IsPlayerOverBottom
         {
             get
             {
-                return (picPlayer.Bottom + mainModel.MoveDistance <= pnlMap.Bottom) ? false : true;
+                return (picPlayer.Bottom + MainModel.MoveDistance <= pnlMap.Bottom) ? false : true;
             }
         }
         private bool IsPlayerOverLeft
         {
             get
             {
-                return (picPlayer.Left - mainModel.MoveDistance >= pnlMap.Left) ? false : true;
+                return (picPlayer.Left - MainModel.MoveDistance >= pnlMap.Left) ? false : true;
             }
         }
         private bool IsPlayerOverRight
         {
             get
             {
-                return (picPlayer.Right + mainModel.MoveDistance <= pnlMap.Right) ? false : true;
+                return (picPlayer.Right + MainModel.MoveDistance <= pnlMap.Right) ? false : true;
             }
         }
         private bool IsPlayerOverMenu
         {
             get
             {
-                return (picPlayer.Bottom + mainModel.MoveDistance <= pnlMenu.Top) ? false : true;
+                return (picPlayer.Bottom + MainModel.MoveDistance <= pnlMenu.Top) ? false : true;
             }
         }
     }
