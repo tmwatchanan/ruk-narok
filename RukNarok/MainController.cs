@@ -55,7 +55,7 @@ namespace RukNarok
                 if (model is MainModel)
                 {
                     MainModel mainModel = (MainModel)model;
-                    mainModel.PlayerDirection = direction;
+                    mainModel.PlayerCharacter.Direction = direction;
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.PlayerPressedKeyDown = key;
-                    mainModel.PlayerMoving = true;
+                    mainModel.PlayerCharacter.Moving = true;
                     switch (key)
                     {
                         case Keys.Up:
@@ -104,7 +104,7 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.PlayerPressedKeyUp = key;
-                    mainModel.PlayerMoving = true;
+                    mainModel.PlayerCharacter.Moving = true;
                     switch (key)
                     {
                         case Keys.Up:
@@ -166,15 +166,28 @@ namespace RukNarok
                 }
             }
         }
-
-        public void PlayerPressAttack()
+   
+        public void PlayerStartAttack()
         {
             foreach (Model model in ModelList)
             {
                 if (model is MainModel)
                 {
                     MainModel mainModel = (MainModel)model;
-                    mainModel.PlayerPressAttack = true;
+                    mainModel.PlayerCharacter.Attacking = true;
+                    mainModel.Update();
+                }
+            }
+        }
+
+        public void PlayerStopAttack()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.PlayerCharacter.Attacking = false;
                     mainModel.Update();
                 }
             }

@@ -39,7 +39,31 @@ namespace RukNarok
             get;
             set;
         }
-        
+        private Direction direction;
+        internal Direction Direction
+        {
+            get;
+            set;
+        }
+        private bool moving = true;
+        internal bool Moving
+        {
+            get;
+            set;
+        }
+        private bool animationChanging = true;
+        internal bool AnimationChanging
+        {
+            get;
+            set;
+        }
+        private bool attacking = false;
+        internal bool Attacking
+        {
+            get;
+            set;
+        }
+
         public Character()
         {
             Name = "Unknown";

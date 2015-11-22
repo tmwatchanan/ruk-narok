@@ -253,6 +253,18 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackSouthWest.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfAttackLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfAttackSouthEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfWest.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

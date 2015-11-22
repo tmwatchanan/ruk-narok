@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RukNarok
 {
-    class Monster
+    class Monster : Character
     {
         public Monster()
         {

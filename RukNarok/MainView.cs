@@ -39,8 +39,6 @@ namespace RukNarok
         private bool PlayerPressKeyDown = false;
         private bool PlayerPressKeyLeft = false;
         private bool PlayerPressKeyRight = false;
-        private bool PlayerMoving = true;
-        private bool PlayerAnimationChanging = true;
         private Keys PrePlayerPressKeyUp = Keys.None;
         private Keys PrePlayerPressKeyDown = Keys.None;
         
@@ -88,8 +86,10 @@ namespace RukNarok
             else if (model is MainModel)
             {
                 if (mainModel.MenuStatusChanging) tmrMenu.Start();
-                if (mainModel.PlayerMoving) OnPlayerMoved();
-                if (mainModel.PlayerPressAttack) tmrCharacterAttacking.Start();
+                if (mainModel.CharacterSpawned) OnCharacterSpawn();
+                if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
+                if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
+                else tmrCharacterAttacking.Stop();
             }
         }
 
@@ -97,11 +97,11 @@ namespace RukNarok
         {
             if (PrePlayerPressKeyDown != e.KeyCode)
             {
-                PlayerAnimationChanging = true;
+                mainModel.PlayerCharacter.AnimationChanging = true;
             }
             if (PrePlayerPressKeyUp == e.KeyCode)
             {
-                PlayerAnimationChanging = true;
+                mainModel.PlayerCharacter.AnimationChanging = true;
                 PrePlayerPressKeyUp = Keys.None;
             }
 
@@ -109,30 +109,30 @@ namespace RukNarok
             {
                 PlayerPressKeyUp = true;
                 PrePlayerPressKeyDown = Keys.Up;
-                PlayerMoving = true;
+                mainModel.PlayerCharacter.Moving = true;
             }
             if (e.KeyCode == Keys.Down)
             {
                 PlayerPressKeyDown = true;
                 PrePlayerPressKeyDown = Keys.Down;
-                PlayerMoving = true;
+                mainModel.PlayerCharacter.Moving = true;
             }
             if (e.KeyCode == Keys.Left)
             {
                 PlayerPressKeyLeft = true;
                 PrePlayerPressKeyDown = Keys.Left;
-                PlayerMoving = true;
+                mainModel.PlayerCharacter.Moving = true;
             }
             if (e.KeyCode == Keys.Right)
             {
                 PlayerPressKeyRight = true;
                 PrePlayerPressKeyDown = Keys.Right;
-                PlayerMoving = true;
+                mainModel.PlayerCharacter.Moving = true;
             }
 
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && !mainModel.PlayerCharacter.Attacking)
             {
-                mainController.PlayerPressAttack();
+                mainController.PlayerStartAttack();
                 //lblHealthBar.Visible = true;
             }
 
@@ -144,8 +144,8 @@ namespace RukNarok
 
         private void MainView_KeyUp(object sender, KeyEventArgs e)
         {
-            PlayerAnimationChanging = true;
-            PlayerMoving = true;
+            mainModel.PlayerCharacter.AnimationChanging = true;
+            mainModel.PlayerCharacter.Moving = true;
             if (e.KeyCode == Keys.Up)
             {
                 PlayerPressKeyUp = false;
@@ -178,7 +178,7 @@ namespace RukNarok
             else if (size < 1) reduce = false;
             this.Invalidate();
 
-            if (PlayerMoving && !mainModel.PlayerPressAttack)
+            if (mainModel.PlayerCharacter.Moving && !mainModel.PlayerCharacter.Attacking)
             {
                 if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
                 {
@@ -198,108 +198,108 @@ namespace RukNarok
                     picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top);
                 }
             }
-            if (PlayerAnimationChanging && !mainModel.PlayerPressAttack)
+            if (mainModel.PlayerCharacter.AnimationChanging && !mainModel.PlayerCharacter.Attacking)
             {
                 if (PlayerPressKeyUp && PlayerPressKeyLeft)
                 {
-                    mainModel.PlayerDirection = Direction.NorthWest;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.NorthWest;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp && PlayerPressKeyRight)
                 {
-                    mainModel.PlayerDirection = Direction.NorthEast;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.NorthEast;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyLeft)
                 {
-                    mainModel.PlayerDirection = Direction.SouthWest;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.SouthWest;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown && PlayerPressKeyRight)
                 {
-                    mainModel.PlayerDirection = Direction.SouthEast;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.SouthEast;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyUp)
                 {
-                    mainModel.PlayerDirection = Direction.North;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.North;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyDown)
                 {
-                    mainModel.PlayerDirection = Direction.South;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.South;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyLeft)
                 {
-                    mainModel.PlayerDirection = Direction.West;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.West;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
                 else if (PlayerPressKeyRight)
                 {
-                    mainModel.PlayerDirection = Direction.East;
-                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerDirection));
+                    mainModel.PlayerCharacter.Direction = Direction.East;
+                    object objPlayerWalking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Walk" + Convert.ToString(mainModel.PlayerCharacter.Direction));
                     if (picPlayer.Image != (Image)objPlayerWalking) picPlayer.Image = (Image)objPlayerWalking;
-                    PlayerAnimationChanging = false;
+                    mainModel.PlayerCharacter.AnimationChanging = false;
                 }
             }
-            if (!PlayerPressKeyUp && !PlayerPressKeyDown && !PlayerPressKeyLeft && !PlayerPressKeyRight && !mainModel.PlayerPressAttack)
+            if (!PlayerPressKeyUp && !PlayerPressKeyDown && !PlayerPressKeyLeft && !PlayerPressKeyRight && !mainModel.PlayerCharacter.Attacking)
             {
-                PlayerMoving = false;
-                if (!PlayerMoving)
+                mainModel.PlayerCharacter.Moving = false;
+                if (!mainModel.PlayerCharacter.Moving)
                 {
                     PrePlayerPressKeyUp = Keys.None;
                     PrePlayerPressKeyDown = Keys.None;
-                    OnPlayerStandStill(mainModel.PlayerDirection);
+                    OnPlayerStandStill(mainModel.PlayerCharacter.Direction);
                 }
             }
         }
 
         private void tmrCharacterAttacking_Tick(object sender, EventArgs e)
         {
-            if (mainModel.PlayerPressAttack && attackingTime == 0)
+            if (mainModel.PlayerCharacter.Attacking && attackingTime == 0)
             {
-                if (mainModel.PlayerDirection == Direction.NorthWest)
+                if (mainModel.PlayerCharacter.Direction == Direction.NorthWest)
                 {
                     object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthWest));
                     if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
                 }
-                else if (mainModel.PlayerDirection == Direction.North || mainModel.PlayerDirection == Direction.NorthEast)
+                else if (mainModel.PlayerCharacter.Direction == Direction.North || mainModel.PlayerCharacter.Direction == Direction.NorthEast)
                 {
                     object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthEast));
                     if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
                 }
-                else if (mainModel.PlayerDirection == Direction.West || mainModel.PlayerDirection == Direction.SouthWest)
+                else if (mainModel.PlayerCharacter.Direction == Direction.West || mainModel.PlayerCharacter.Direction == Direction.SouthWest)
                 {
                     object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthWest));
                     if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
                 }
-                else if (mainModel.PlayerDirection == Direction.East || mainModel.PlayerDirection == Direction.SouthEast ||
-                    mainModel.PlayerDirection == Direction.South)
+                else if (mainModel.PlayerCharacter.Direction == Direction.East || mainModel.PlayerCharacter.Direction == Direction.SouthEast ||
+                    mainModel.PlayerCharacter.Direction == Direction.South)
                 {
                     object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthEast));
                     if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
                 }
             }
             ++attackingTime;
+            OnPlayerAttack();
             if (attackingTime == 6)
             {
-                tmrCharacterAttacking.Stop();
-                mainModel.PlayerPressAttack = false;
+                mainController.PlayerStopAttack();
                 attackingTime = 0;
             }
         }
@@ -409,13 +409,67 @@ namespace RukNarok
         private void ShowCharacterHealthBar()
         {
             lblHealthBar.Visible = true;
-            lblHealthBar.Top = picPlayer.Top - 15;
-            lblHealthBar.Left = picPlayer.Left + 5;
+            lblHealthBar.Top = picMonster1.Top - 15;
+            lblHealthBar.Left = picMonster1.Left + 5;
         }
 
         private void OnPlayerAttack()
         {
+            if (picPlayer.Left + 5 >= picMonster1.Right)
+            {
 
+            }
+        }
+
+        private void OnCharacterSpawn()
+        {
+            picPlayer.Visible = true;
+            picMonster1.Visible = true;
+            OnMonster1Spawn();
+        }
+
+        private void tmrMonster1_Tick(object sender, EventArgs e)
+        {
+            if (reduce) size--;
+            else size++;
+            if (size > 500) reduce = true;
+            else if (size < 1) reduce = false;
+            this.Invalidate();
+
+            if (mainModel.MonsterCharacter.Moving && !mainModel.MonsterCharacter.Attacking)
+            {
+                //if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
+                //{
+                //    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - MainModel.MoveDistance);
+                //}
+                //if ((PlayerPressKeyDown))
+                //{
+                //    if ((MenuWindow) && (!IsPlayerOverMenu) || (!MenuWindow) && (!IsPlayerOverBottom))
+                //        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + MainModel.MoveDistance);
+                //}
+                //if ((PlayerPressKeyLeft) && (!IsPlayerOverLeft))
+                //{
+                //    picPlayer.Location = new Point(picPlayer.Left - MainModel.MoveDistance, picPlayer.Top);
+                //}
+                //if ((PlayerPressKeyRight) && (!IsPlayerOverRight))
+                //{
+                //    picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top);
+                //}
+            }
+            if (mainModel.MonsterCharacter.AnimationChanging && !mainModel.MonsterCharacter.Attacking)
+            {
+                
+            }
+            if (!mainModel.MonsterCharacter.Moving && !mainModel.MonsterCharacter.Attacking)
+            {
+                //OnPlayerStandStill(mainModel.PlayerCharacter.Direction);
+            }
+        }
+
+        private void OnMonster1Spawn()
+        {
+            object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthWest));
+            if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
         }
     }
 }

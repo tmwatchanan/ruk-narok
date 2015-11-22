@@ -42,18 +42,19 @@ namespace RukNarok
             get;
             set;
         }
-        private bool playerMoving = true;
-        internal bool PlayerMoving
+        private Monster monsterCharacter;
+        internal Monster MonsterCharacter
         {
             get;
             set;
         }
-        private bool playerAnimationChanging = true;
-        internal bool PlayerAnimationChanging
+        private bool characterSpawned;
+        internal bool CharacterSpawned
         {
             get;
             set;
         }
+        
         private bool[] playerMovingDirection;
         internal bool[] PlayerMovingDirection
         {
@@ -64,12 +65,7 @@ namespace RukNarok
         public bool PressDown = false;
         public bool PressLeft = false;
         public bool PressRight = false;
-        private Direction playerDirection;
-        internal Direction PlayerDirection
-        {
-            get;
-            set;
-        }
+
         private Keys playerPressedKeyUp;
         internal Keys PlayerPressedKeyUp
         {
@@ -86,29 +82,29 @@ namespace RukNarok
         public const int MoveDistance = 3;
         public const int MoveDistanceOblique = 2;
 
-        private bool playerPressAttack = false;
-        internal bool PlayerPressAttack
-        {
-            get;
-            set;
-        }
-
         public MainModel()
         {
             MenuStatus = true;
             MenuStatusChanging = false;
 
-            PlayerDirection = Direction.South;//Direction.NULL
-            PlayerMoving = true;
-            PlayerAnimationChanging = true;
+            CreatePlayerCharacter();
+            PlayerCharacter.Direction = Direction.South;//Direction.NULL
+            PlayerCharacter.Moving = true;
+            PlayerCharacter.AnimationChanging = true;
             PlayerMovingDirection = new bool[10];
             for (int i = 0; i < PlayerMovingDirection.Length; i++)
             {
                 PlayerMovingDirection[i] = false;
             }
+            CreateMonsterCharacter();
+            MonsterCharacter.Direction = Direction.South;
+            MonsterCharacter.Moving = true;
+            MonsterCharacter.AnimationChanging = true;
+
+            CharacterSpawned = true;
+            
             PlayerPressedKeyUp = Keys.None;
             PlayerPressedKeyDown = Keys.None;
-            CreatePlayerCharacter();
         }
 
         public void Update()
@@ -120,6 +116,17 @@ namespace RukNarok
         {
             PlayerCharacter = new Player();
             PlayerCharacter.ClassName = "Novice";
+            PlayerCharacter.HP = 100;
+            PlayerCharacter.EXP = 0;
+            PlayerCharacter.AttackDamage = 10;
+        }
+
+        private void CreateMonsterCharacter()
+        {
+            MonsterCharacter = new Monster();
+            MonsterCharacter.Name = "BabyDesertWolf";
+            MonsterCharacter.HP = 100;
+            MonsterCharacter.AttackDamage = 10;
         }
     }
 }
