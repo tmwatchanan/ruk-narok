@@ -84,6 +84,14 @@ namespace RukNarok
         }
 
         public const int MoveDistance = 3;
+        public const int MoveDistanceOblique = 2;
+
+        private bool playerPressAttack = false;
+        internal bool PlayerPressAttack
+        {
+            get;
+            set;
+        }
 
         public MainModel()
         {

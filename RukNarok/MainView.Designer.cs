@@ -74,9 +74,9 @@
             this.pnlMap.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMap.BackgroundImage = global::RukNarok.Properties.Resources.GrassBG;
             this.pnlMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlMap.Controls.Add(this.pnlAvatar);
             this.pnlMap.Controls.Add(this.picPlayer);
             this.pnlMap.Controls.Add(this.lblHealthBar);
-            this.pnlMap.Controls.Add(this.pnlAvatar);
             this.pnlMap.Controls.Add(this.boxStatus);
             this.pnlMap.Controls.Add(this.pnlMenu);
             this.pnlMap.Dock = System.Windows.Forms.DockStyle.Fill;

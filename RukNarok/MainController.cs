@@ -166,5 +166,18 @@ namespace RukNarok
                 }
             }
         }
+
+        public void PlayerPressAttack()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.PlayerPressAttack = true;
+                    mainModel.Update();
+                }
+            }
+        }
     }
 }
