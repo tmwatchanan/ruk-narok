@@ -43,6 +43,13 @@ namespace RukNarok
             set;
         }
 
+        private bool backgroundChanging;
+        internal bool BackgroundChanging
+        {
+            get;
+            set;
+        }
+
         private bool avatarStatus;
         internal bool AvatarStatus
         {
@@ -98,10 +105,11 @@ namespace RukNarok
 
         public MainModel()
         {
-            GameStatus = "MainView";
+            GameStatus = "Main";
             MenuStatus = false;
             MenuStatusChanging = false;
             AvatarStatus = false;
+            BackgroundChanging = false;
 
             CreatePlayerCharacter();
             PlayerCharacter.Direction = Direction.South;//Direction.NULL

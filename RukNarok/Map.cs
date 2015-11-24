@@ -10,11 +10,23 @@ namespace RukNarok
 {
     class Map
     {
-        private Image background;
+        private Image mainBG;
+        private Image battleBG;
         private Location[] warp;
         public List<Monster> monsterList;
+        private int stage;
 
-        internal Image Background
+        internal Image MainBG
+        {
+            get;
+            set;
+        }
+        internal Image BattleBG
+        {
+            get;
+            set;
+        }
+        internal int Stage
         {
             get;
             set;
@@ -24,34 +36,13 @@ namespace RukNarok
         {
             warp = new Location[2];
             monsterList = new List<Monster>();
-            MapInit(stage);
+            Stage = stage;
+            //MapInit(stage);
         }
 
-        public void MapInit(int stage)
-        {
-            switch (stage)
-            {
-                case 0:
-                    {
-                        Background = Properties.Resources.GrassBG;
-                        break;
-                    }
-                case 1:
-                    {
-                        Background = Properties.Resources.Map1;
-                        break;
-                    }
-                case 2:
-                    {
-                        Background = Properties.Resources.GrassBG;
-                        break;
-                    }
-                default:
-                    {
-                        Background = Properties.Resources.GrassBG;
-                        break;
-                    }
-            }
-        }
+        //public void MapInit(int stage)
+        //{
+            
+        //}
     }
 }

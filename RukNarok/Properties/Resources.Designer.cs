@@ -103,9 +103,29 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GrassBG {
+        internal static System.Drawing.Bitmap BattleBG0 {
             get {
-                object obj = ResourceManager.GetObject("GrassBG", resourceCulture);
+                object obj = ResourceManager.GetObject("BattleBG0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleBG1 {
+            get {
+                object obj = ResourceManager.GetObject("BattleBG1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Guild {
+            get {
+                object obj = ResourceManager.GetObject("Guild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap LegendMenu {
             get {
                 object obj = ResourceManager.GetObject("LegendMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBG0 {
+            get {
+                object obj = ResourceManager.GetObject("MainBG0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +406,16 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap QuestMenu {
             get {
                 object obj = ResourceManager.GetObject("QuestMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scratch {
+            get {
+                object obj = ResourceManager.GetObject("scratch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

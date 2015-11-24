@@ -206,5 +206,39 @@ namespace RukNarok
                 }
             }
         }
+
+        public void PlayerStartBattle()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "Battle";
+                    mainModel.Update();
+                }
+            }
+            foreach (Model model in ModelList)
+            {
+                if (model is MapModel)
+                {
+                    MapModel mapModel = (MapModel)model;
+                    mapModel.Update();
+                }
+            }
+        }
+
+        public void PlayerStopBattle()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "Main";
+                    mainModel.Update();
+                }
+            }
+        }
     }
 }

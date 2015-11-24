@@ -176,9 +176,6 @@
     <None Include="Properties\Images\Interfaces\StatusMenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Images\Backgrounds\GrassBG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\Images\Maps\Map1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +264,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Images\Characters\Player\Novice\NoviceAttackEffect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\MainBG0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\Battle\BattleBG0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\Battle\BattleBG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\Battle\Guild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\scratch.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
