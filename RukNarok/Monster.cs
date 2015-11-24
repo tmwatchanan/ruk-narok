@@ -8,9 +8,16 @@ namespace RukNarok
 {
     class Monster : Character
     {
+        private bool healthBar = false;
+        internal bool HealthBar
+        {
+            get;
+            set;
+        }
+
         public Monster()
         {
-
+            
         }
     }
 }

@@ -192,5 +192,19 @@ namespace RukNarok
                 }
             }
         }
+
+        public void Monster1IsAttacked()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.MonsterCharacter.IsAttacked = true;
+                    if (!mainModel.MonsterCharacter.HealthBar) mainModel.MonsterCharacter.HealthBar = true;
+                    mainModel.Update();
+                }
+            }
+        }
     }
 }

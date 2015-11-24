@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
-using System.Timers;
+using System.Windows.Forms;
 
 namespace RukNarok
 {
@@ -62,6 +55,7 @@ namespace RukNarok
             mapModel.AttachObserver(this);
 
             Notify(mapModel);
+            Notify(mainModel);
         }
 
         private void MainView_Load(object sender, EventArgs e)
@@ -85,11 +79,17 @@ namespace RukNarok
             }
             else if (model is MainModel)
             {
-                if (mainModel.MenuStatusChanging) tmrMenu.Start();
-                if (mainModel.CharacterSpawned) OnCharacterSpawn();
-                if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
-                if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
-                else tmrCharacterAttacking.Stop();
+                if (mainModel.GameStatus == "MainView")
+                {
+                    OnMainView();
+
+                    if (mainModel.MenuStatusChanging) tmrMenu.Start();
+                    if (mainModel.CharacterSpawned) OnCharacterSpawn();
+                    if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
+                    if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
+                    else tmrCharacterAttacking.Stop();
+                    if (mainModel.MonsterCharacter.IsAttacked) ShowCharacterHealthBar();
+                }
             }
         }
 
@@ -180,22 +180,36 @@ namespace RukNarok
 
             if (mainModel.PlayerCharacter.Moving && !mainModel.PlayerCharacter.Attacking)
             {
-                if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
+                if ((IsPlayerOverAvatarRight) && (IsPlayerOverAvatarBottom))
                 {
-                    picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - MainModel.MoveDistance);
+                    if (IsPlayerOverAvatarRight)
+                    {
+                        picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top + MainModel.MoveDistance);
+                    }
+                    else if (IsPlayerOverAvatarBottom)
+                    {
+                        picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top + MainModel.MoveDistance);
+                    }
                 }
-                if ((PlayerPressKeyDown))
+                else
                 {
-                    if ((MenuWindow) && (!IsPlayerOverMenu) || (!MenuWindow) && (!IsPlayerOverBottom))
-                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + MainModel.MoveDistance);
-                }
-                if ((PlayerPressKeyLeft) && (!IsPlayerOverLeft))
-                {
-                    picPlayer.Location = new Point(picPlayer.Left - MainModel.MoveDistance, picPlayer.Top);
-                }
-                if ((PlayerPressKeyRight) && (!IsPlayerOverRight))
-                {
-                    picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top);
+                    if ((PlayerPressKeyUp) && (!IsPlayerOverTop))
+                    {
+                        picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top - MainModel.MoveDistance);
+                    }
+                    if ((PlayerPressKeyDown))
+                    {
+                        if ((MenuWindow) && (!IsPlayerOverMenu) || (!MenuWindow) && (!IsPlayerOverBottom))
+                            picPlayer.Location = new Point(picPlayer.Left, picPlayer.Top + MainModel.MoveDistance);
+                    }
+                    if ((PlayerPressKeyLeft) && (!IsPlayerOverLeft))
+                    {
+                        picPlayer.Location = new Point(picPlayer.Left - MainModel.MoveDistance, picPlayer.Top);
+                    }
+                    if ((PlayerPressKeyRight) && (!IsPlayerOverRight))
+                    {
+                        picPlayer.Location = new Point(picPlayer.Left + MainModel.MoveDistance, picPlayer.Top);
+                    }
                 }
             }
             if (mainModel.PlayerCharacter.AnimationChanging && !mainModel.PlayerCharacter.Attacking)
@@ -335,27 +349,49 @@ namespace RukNarok
             pnlMap.BackgroundImage = mapModel.MapList[mapModel.CurrentMap].Background;
         }
 
+        private void OnMainView()
+        {
+            pnlMap.Visible = true;
+            OnMenuToggled();
+            OnAvatarToggled();
+        }
+
         private void OnMenuToggled()
         {
-            if (mainModel.MenuStatus)
+            if (mainModel.MenuStatusChanging)
             {
-                if (pnlMenu.Bottom > pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
+                if (mainModel.MenuStatus)
+                {
+                    if (pnlMenu.Bottom > pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top - 2);
+                    else
+                    {
+                        mainModel.MenuStatus = true;
+                        mainModel.MenuStatusChanging = false;
+                        tmrMenu.Stop();
+                    }
+                }
                 else
                 {
-                    mainModel.MenuStatus = true;
-                    mainModel.MenuStatusChanging = false;
-                    tmrMenu.Stop();
+                    if (pnlMenu.Top < pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
+                    else
+                    {
+                        mainModel.MenuStatus = false;
+                        mainModel.MenuStatusChanging = false;
+                        tmrMenu.Stop();
+                    }
                 }
+            }
+        }
+
+        private void OnAvatarToggled()
+        {
+            if (mainModel.AvatarStatus)
+            {
+                picAvatar.Visible = false;
             }
             else
             {
-                if (pnlMenu.Top < pnlMap.Bottom) pnlMenu.Location = new Point(pnlMenu.Left, pnlMenu.Top + 2);
-                else
-                {
-                    mainModel.MenuStatus = false;
-                    mainModel.MenuStatusChanging = false;
-                    tmrMenu.Stop();
-                }
+                picAvatar.Visible = true;
             }
         }
 
@@ -405,6 +441,20 @@ namespace RukNarok
                 return (picPlayer.Bottom + MainModel.MoveDistance <= pnlMenu.Top) ? false : true;
             }
         }
+        private bool IsPlayerOverAvatarRight
+        {
+            get
+            {
+                return (picPlayer.Left + MainModel.MoveDistance >= picAvatar.Right) ? false : true;
+            }
+        }
+        private bool IsPlayerOverAvatarBottom
+        {
+            get
+            {
+                return (picPlayer.Top + MainModel.MoveDistance >= picAvatar.Bottom) ? false : true;
+            }
+        }
 
         private void ShowCharacterHealthBar()
         {
@@ -415,9 +465,10 @@ namespace RukNarok
 
         private void OnPlayerAttack()
         {
-            if (picPlayer.Left + 5 >= picMonster1.Right)
+            if (picPlayer.Left - 5 >= picMonster1.Right)
             {
-
+                mainController.Monster1IsAttacked();
+                mainModel.MonsterCharacter.HP -= mainModel.PlayerCharacter.AttackDamage;
             }
         }
 
@@ -468,8 +519,8 @@ namespace RukNarok
 
         private void OnMonster1Spawn()
         {
-            object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthWest));
-            if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+            object objMonster1Stand = Properties.Resources.ResourceManager.GetObject(mainModel.MonsterCharacter.Name + "East");
+            if (picMonster1.Image != (Image)objMonster1Stand) picMonster1.Image = (Image)objMonster1Stand;
         }
     }
 }

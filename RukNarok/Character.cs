@@ -63,6 +63,12 @@ namespace RukNarok
             get;
             set;
         }
+        private bool isAttacked = false;
+        internal bool IsAttacked
+        {
+            get;
+            set;
+        }
 
         public Character()
         {

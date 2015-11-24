@@ -23,6 +23,13 @@ namespace RukNarok
 
     class MainModel : Model
     {
+        private string gameStatus;
+        internal string GameStatus
+        {
+            get;
+            set;
+        }
+
         private bool menuStatus;
         internal bool MenuStatus
         {
@@ -35,7 +42,14 @@ namespace RukNarok
             get;
             set;
         }
-        
+
+        private bool avatarStatus;
+        internal bool AvatarStatus
+        {
+            get;
+            set;
+        }
+
         private Player playerCharacter;
         internal Player PlayerCharacter
         {
@@ -84,8 +98,10 @@ namespace RukNarok
 
         public MainModel()
         {
-            MenuStatus = true;
+            GameStatus = "MainView";
+            MenuStatus = false;
             MenuStatusChanging = false;
+            AvatarStatus = false;
 
             CreatePlayerCharacter();
             PlayerCharacter.Direction = Direction.South;//Direction.NULL
