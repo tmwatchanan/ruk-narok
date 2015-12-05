@@ -280,6 +280,18 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Monster\BabyDesertWolf\scratch.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceBattle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceCast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceDead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Player\Novice\NoviceOnHit.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -30,6 +30,13 @@ namespace RukNarok
             set;
         }
 
+        private string battleStatus;
+        internal string BattleStatus
+        {
+            get;
+            set;
+        }
+
         private bool menuStatus;
         internal bool MenuStatus
         {
@@ -59,12 +66,6 @@ namespace RukNarok
 
         private Player playerCharacter;
         internal Player PlayerCharacter
-        {
-            get;
-            set;
-        }
-        private Monster monsterCharacter;
-        internal Monster MonsterCharacter
         {
             get;
             set;
@@ -120,10 +121,6 @@ namespace RukNarok
             {
                 PlayerMovingDirection[i] = false;
             }
-            CreateMonsterCharacter();
-            MonsterCharacter.Direction = Direction.South;
-            MonsterCharacter.Moving = true;
-            MonsterCharacter.AnimationChanging = true;
 
             CharacterSpawned = true;
             
@@ -143,14 +140,6 @@ namespace RukNarok
             PlayerCharacter.HP = 100;
             PlayerCharacter.EXP = 0;
             PlayerCharacter.AttackDamage = 10;
-        }
-
-        private void CreateMonsterCharacter()
-        {
-            MonsterCharacter = new Monster();
-            MonsterCharacter.Name = "BabyDesertWolf";
-            MonsterCharacter.HP = 100;
-            MonsterCharacter.AttackDamage = 10;
         }
     }
 }

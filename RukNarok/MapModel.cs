@@ -36,6 +36,14 @@ namespace RukNarok
                 addMap.MainBG = (Image)objMainBG;
                 object objBattleBG = Properties.Resources.ResourceManager.GetObject("BattleBG" + i);
                 addMap.BattleBG = (Image)objBattleBG;
+                switch (i)
+                {
+                    case 0:
+                        addMap.monsterList.Add(BabyDesertWolf());
+                        break;
+                    default:
+                        break;
+                }
                 MapList.Add(addMap);
             }
             Update();
@@ -44,6 +52,26 @@ namespace RukNarok
         public void Update()
         {
             NotifyAll();
+        }
+
+        private Monster BabyDesertWolf()
+        {
+            Monster babyDesertWolf = new Monster();
+            babyDesertWolf.AttackDamage = 1;
+            babyDesertWolf.EXP = 10;
+            babyDesertWolf.HP = 50;
+            babyDesertWolf.Name = "BabyDesertWolf";
+            return babyDesertWolf;
+        }
+
+        private Monster KingYamu()
+        {
+            Monster kingYamu = new Monster();
+            kingYamu.AttackDamage = 2;
+            kingYamu.EXP = 20;
+            kingYamu.HP = 100;
+            kingYamu.Name = "KingYamu";
+            return kingYamu;
         }
     }
 }

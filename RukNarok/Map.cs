@@ -37,12 +37,6 @@ namespace RukNarok
             warp = new Location[2];
             monsterList = new List<Monster>();
             Stage = stage;
-            //MapInit(stage);
         }
-
-        //public void MapInit(int stage)
-        //{
-            
-        //}
     }
 }

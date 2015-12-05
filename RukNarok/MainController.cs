@@ -32,16 +32,16 @@ namespace RukNarok
             }
         }
 
-        public override void MapChanged(int action)
+        public override void MapChanged(int newMap)
         {
             foreach (Model model in ModelList)
             {
                 if (model is MapModel)
                 {
                     MapModel mapModel = (MapModel)model;
-                    if (action >= MapZero && action <= MapTwo)
+                    if (newMap >= MapZero && newMap <= MapTwo)
                     {
-                        mapModel.CurrentMap = action;
+                        mapModel.CurrentMap = newMap;
                         mapModel.Update();
                     }
                 }
@@ -200,8 +200,8 @@ namespace RukNarok
                 if (model is MainModel)
                 {
                     MainModel mainModel = (MainModel)model;
-                    mainModel.MonsterCharacter.IsAttacked = true;
-                    if (!mainModel.MonsterCharacter.HealthBar) mainModel.MonsterCharacter.HealthBar = true;
+                    //mainModel.MonsterCharacter.IsAttacked = true;
+                    //if (!mainModel.MonsterCharacter.HealthBar) mainModel.MonsterCharacter.HealthBar = true;
                     mainModel.Update();
                 }
             }
