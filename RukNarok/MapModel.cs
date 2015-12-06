@@ -3,7 +3,6 @@ using System.Drawing;
 
 namespace RukNarok
 {
-
     class MapModel : Model
     {
         private const int maxMap = 1;
@@ -25,6 +24,13 @@ namespace RukNarok
             set;
         }
 
+        private int monsterCount;
+        internal int MonsterCount
+        {
+            get;
+            set;
+        }
+
         public MapModel()
         {
             CurrentMap = 0;
@@ -40,10 +46,12 @@ namespace RukNarok
                 {
                     case 0:
                         addMap.monsterList.Add(BabyDesertWolf());
+                        addMap.monsterList.Add(KingYamu());
                         break;
                     default:
                         break;
                 }
+                MonsterCount = addMap.monsterList.Count;
                 MapList.Add(addMap);
             }
             Update();

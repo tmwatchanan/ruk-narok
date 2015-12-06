@@ -244,4 +244,10 @@
   <data name="NoviceOnHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceOnHit.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KingYamuEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamu\KingYamuEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KingYamuWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamu\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

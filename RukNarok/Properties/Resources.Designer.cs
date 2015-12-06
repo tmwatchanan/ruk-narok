@@ -143,6 +143,26 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KingYamuEast {
+            get {
+                object obj = ResourceManager.GetObject("KingYamuEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KingYamuWest {
+            get {
+                object obj = ResourceManager.GetObject("KingYamuWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LegendAvatar {
             get {
                 object obj = ResourceManager.GetObject("LegendAvatar", resourceCulture);

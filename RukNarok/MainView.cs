@@ -39,6 +39,11 @@ namespace RukNarok
         
         private bool MenuWindow = true;
 
+        private int currentMap;
+        private int monsterCount;
+        PictureBox[] monsterBox;
+        Random random;
+
         public MainView()
         {
             InitializeComponent();
@@ -54,6 +59,10 @@ namespace RukNarok
             mainController.AddModel(mapModel);
             mapModel.AttachObserver(this);
 
+            monsterCount = mapModel.MonsterCount;
+            MonsterPictureBoxInit();
+            random = new Random();
+
             Notify(mapModel);
             Notify(mainModel);
         }
@@ -64,6 +73,14 @@ namespace RukNarok
             tmrCharacterWalking.Start();
             MenuInit();
             BattleLayoutInit();
+        }
+
+        private void MonsterPictureBoxInit()
+        {
+            monsterBox = new PictureBox[monsterCount + 1];
+            currentMap = mapModel.CurrentMap;
+            monsterBox[1] = picMonster1;
+            monsterBox[2] = picMonster2;
         }
 
         private void MenuInit()
@@ -312,12 +329,22 @@ namespace RukNarok
                     }
                 }
 
-                if (picPlayer.Bounds.IntersectsWith(picMonster1.Bounds))
+                if (IsPlayerIntersectMonster())
                 {
                     lblGameStatus.Text = "Battle!";
                     mainController.PlayerStartBattle();
                 }
             }
+        }
+
+        private bool IsPlayerIntersectMonster()
+        {
+            for (int i = 0; i < monsterCount; i++)
+            {
+                if (picPlayer.Bounds.IntersectsWith(monsterBox[i + 1].Bounds))
+                    return true;
+            }
+            return false;
         }
 
         private void tmrCharacterAttacking_Tick(object sender, EventArgs e)
@@ -597,7 +624,7 @@ namespace RukNarok
         {
             OnPlayerStandStill(mainModel.PlayerCharacter.Direction);
             picPlayer.Visible = false;
-            picMonster1.Visible = false;
+            MonsterVisible(false);
             object objPlayerBattle = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Battle");
             if (picPlayerBattlePosition.Image != (Image)objPlayerBattle) picPlayerBattlePosition.Image = (Image)objPlayerBattle;
             picPlayerBattlePosition.Visible = true;
@@ -614,18 +641,29 @@ namespace RukNarok
 
         private void OnMapInit()
         {
-            int currentMap = mapModel.CurrentMap;
-            int monsterCount = mapModel.MapList[currentMap].monsterList.Count;
-            PictureBox[] monsterBox = new PictureBox[monsterCount+1];
-            monsterBox[1] = picMonster1;
             for (int i = 0; i < monsterCount; i++)
             {
                 lblGameStatus.Text = mapModel.MapList[currentMap].monsterList[i].Name;
                 object objMonster = Properties.Resources.ResourceManager.GetObject(mapModel.MapList[currentMap].monsterList[i].Name + "East");
-                int numberMonster = i + 1;
-                monsterBox[numberMonster].Image = (Image)objMonster;
-                monsterBox[numberMonster].Visible = true;
+                monsterBox[i + 1].Image = (Image)objMonster;
+                int randX;
+                int randY;
+                do
+                {
+                    randX = random.Next(125, 780);
+                    randY = random.Next(125, 500);
+                } while (randX < 125 && randY < 125);
+                monsterBox[i + 1].Location = new Point(randX, randY);
              }
+            MonsterVisible(true);
+        }
+
+        private void MonsterVisible(bool boolVar)
+        {
+            for (int i = 0; i < monsterCount; i++)
+            {
+                monsterBox[i + 1].Visible = boolVar;
+            }
         }
     }
 

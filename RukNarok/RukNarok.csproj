@@ -292,6 +292,12 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Player\Novice\NoviceOnHit.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\KingYamu\KingYamuEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\KingYamu\KingYamuWest.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
