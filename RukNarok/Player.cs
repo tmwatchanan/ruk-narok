@@ -19,10 +19,5 @@ namespace RukNarok
         {
             ClassName = "Unknown";
         }
-
-        protected void Attack()
-        {
-
-        }
     }
 }

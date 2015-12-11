@@ -97,6 +97,9 @@ namespace RukNarok
             picPlayerBattlePosition.SizeMode = PictureBoxSizeMode.CenterImage;
             picEffectBattlePosition.Location = new Point(250, 180);
             picEffectBattlePosition.SizeMode = PictureBoxSizeMode.CenterImage;
+
+            picPlayerSkill1.Location = new Point(550, 30);
+            picPlayerSkill1.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         public void SetController(MainController controller)
@@ -183,12 +186,17 @@ namespace RukNarok
                     mainController.ToggleMenu();
                 }
             }
-            else if (mainModel.GameStatus == "Battle")
+            else if (mainModel.GameStatus == "Battle" && mainModel.BattleStatus == "PlayerTurn")
             {
                 if (e.KeyCode == Keys.Space)
                 {
                     mainController.PlayerStopBattle();
                     picPlayer.Location = new Point(250, 250);
+                }
+                if (e.KeyCode == Keys.Q)
+                {
+                    picEffectBattlePosition.Image = Properties.Resources.SwordSlash;
+                    tmrCharacterAttacking.Start();
                 }
             }
         }
@@ -379,6 +387,8 @@ namespace RukNarok
             {
                 mainController.PlayerStopAttack();
                 attackingTime = 0;
+                picEffectBattlePosition.Image = null;
+                MonsterStartAttack();
             }
         }
 
@@ -618,10 +628,15 @@ namespace RukNarok
             lblEXP.Visible = true;
             lblPlayerHealthBar.Visible = false;
             lblMonsterHealthBar.Visible = false;
+            lblEXP.Padding = 5;
+
+            picPlayerSkill1.Visible = false;
         }
 
         private void OnPlayerBattle()
         {
+            mainModel.BattleStatus = "PlayerTurn";
+            lblGameStatus.Text = mainModel.BattleStatus;
             OnPlayerStandStill(mainModel.PlayerCharacter.Direction);
             picPlayer.Visible = false;
             MonsterVisible(false);
@@ -633,6 +648,10 @@ namespace RukNarok
             lblEXP.Visible = false;
             lblPlayerHealthBar.Visible = true;
             lblMonsterHealthBar.Visible = true;
+
+            pnlBattleStatus.Visible = true;
+            picPlayerSkill1.Image = Properties.Resources.Portal;
+            picPlayerSkill1.Visible = true;
         }
 
         private void OnPlayerHit()
@@ -643,11 +662,13 @@ namespace RukNarok
         {
             for (int i = 0; i < monsterCount; i++)
             {
-                lblGameStatus.Text = mapModel.MapList[currentMap].monsterList[i].Name;
-                object objMonster = Properties.Resources.ResourceManager.GetObject(mapModel.MapList[currentMap].monsterList[i].Name + "East");
+                //lblGameStatus.Text = mapModel.MapList[currentMap].monsterList[i].Name;
+                string[] directionMonster = new string[2];
+                directionMonster[0] = "West";
+                directionMonster[1] = "East";
+                object objMonster = Properties.Resources.ResourceManager.GetObject(mapModel.MapList[currentMap].monsterList[i].Name + directionMonster[random.Next(2)]);
                 monsterBox[i + 1].Image = (Image)objMonster;
-                int randX;
-                int randY;
+                int randX, randY;
                 do
                 {
                     randX = random.Next(125, 780);
@@ -664,6 +685,11 @@ namespace RukNarok
             {
                 monsterBox[i + 1].Visible = boolVar;
             }
+        }
+
+        private void MonsterStartAttack()
+        {
+            mainModel.BattleStatus = "MonsterTurn";
         }
     }
 

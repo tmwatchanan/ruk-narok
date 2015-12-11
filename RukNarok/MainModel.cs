@@ -138,8 +138,10 @@ namespace RukNarok
             PlayerCharacter = new Player();
             PlayerCharacter.ClassName = "Novice";
             PlayerCharacter.HP = 100;
+            PlayerCharacter.Level = 1;
             PlayerCharacter.EXP = 0;
             PlayerCharacter.AttackDamage = 10;
+            PlayerCharacter.SkillList.Add(Skill.SwordSlash());
         }
     }
 }

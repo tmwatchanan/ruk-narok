@@ -240,5 +240,21 @@ namespace RukNarok
                 }
             }
         }
+
+        public void PlayerLevelUp()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    switch (mainModel.PlayerCharacter.Level)
+                    {
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
     }
 }

@@ -38,11 +38,9 @@
             this.picMonster2 = new System.Windows.Forms.PictureBox();
             this.picPlayerBattlePosition = new System.Windows.Forms.PictureBox();
             this.picMonsterBattlePosition = new System.Windows.Forms.PictureBox();
-            this.picEffectBattlePosition = new System.Windows.Forms.PictureBox();
             this.lblEXP = new System.Windows.Forms.Label();
             this.lblPlayerHealthBar = new System.Windows.Forms.Label();
             this.lblMonsterHealthBar = new System.Windows.Forms.Label();
-            this.pnlBattleStatus = new System.Windows.Forms.Panel();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.lblGameStatus = new System.Windows.Forms.Label();
             this.picAvatar = new System.Windows.Forms.PictureBox();
@@ -54,11 +52,13 @@
             this.picSkillMenu = new System.Windows.Forms.PictureBox();
             this.picStatusMenu = new System.Windows.Forms.PictureBox();
             this.picMonster1 = new System.Windows.Forms.PictureBox();
+            this.pnlBattleStatus = new System.Windows.Forms.Panel();
+            this.picPlayerSkill1 = new System.Windows.Forms.PictureBox();
+            this.picEffectBattlePosition = new System.Windows.Forms.PictureBox();
             this.pnlBG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBattlePosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonsterBattlePosition)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -67,6 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSkillMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatusMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster1)).BeginInit();
+            this.pnlBattleStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayerSkill1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrCharacterWalking
@@ -94,14 +97,13 @@
             this.pnlBG.BackColor = System.Drawing.SystemColors.Control;
             this.pnlBG.BackgroundImage = global::RukNarok.Properties.Resources.MainBG0;
             this.pnlBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBG.Controls.Add(this.picEffectBattlePosition);
             this.pnlBG.Controls.Add(this.picMonster2);
             this.pnlBG.Controls.Add(this.picPlayerBattlePosition);
             this.pnlBG.Controls.Add(this.picMonsterBattlePosition);
-            this.pnlBG.Controls.Add(this.picEffectBattlePosition);
             this.pnlBG.Controls.Add(this.lblEXP);
             this.pnlBG.Controls.Add(this.lblPlayerHealthBar);
             this.pnlBG.Controls.Add(this.lblMonsterHealthBar);
-            this.pnlBG.Controls.Add(this.pnlBattleStatus);
             this.pnlBG.Controls.Add(this.picPlayer);
             this.pnlBG.Controls.Add(this.lblGameStatus);
             this.pnlBG.Controls.Add(this.picAvatar);
@@ -109,6 +111,7 @@
             this.pnlBG.Controls.Add(this.boxStatus);
             this.pnlBG.Controls.Add(this.pnlMenu);
             this.pnlBG.Controls.Add(this.picMonster1);
+            this.pnlBG.Controls.Add(this.pnlBattleStatus);
             this.pnlBG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBG.Location = new System.Drawing.Point(0, 0);
             this.pnlBG.Margin = new System.Windows.Forms.Padding(0);
@@ -148,16 +151,6 @@
             this.picMonsterBattlePosition.TabIndex = 10;
             this.picMonsterBattlePosition.TabStop = false;
             // 
-            // picEffectBattlePosition
-            // 
-            this.picEffectBattlePosition.BackColor = System.Drawing.Color.Transparent;
-            this.picEffectBattlePosition.Location = new System.Drawing.Point(250, 180);
-            this.picEffectBattlePosition.Name = "picEffectBattlePosition";
-            this.picEffectBattlePosition.Size = new System.Drawing.Size(300, 200);
-            this.picEffectBattlePosition.TabIndex = 12;
-            this.picEffectBattlePosition.TabStop = false;
-            this.picEffectBattlePosition.Visible = false;
-            // 
             // lblEXP
             // 
             this.lblEXP.BackColor = System.Drawing.Color.Gold;
@@ -191,14 +184,6 @@
             this.lblMonsterHealthBar.Text = "HP : -/-";
             this.lblMonsterHealthBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMonsterHealthBar.Visible = false;
-            // 
-            // pnlBattleStatus
-            // 
-            this.pnlBattleStatus.Location = new System.Drawing.Point(0, 480);
-            this.pnlBattleStatus.Name = "pnlBattleStatus";
-            this.pnlBattleStatus.Size = new System.Drawing.Size(800, 120);
-            this.pnlBattleStatus.TabIndex = 14;
-            this.pnlBattleStatus.Visible = false;
             // 
             // picPlayer
             // 
@@ -326,6 +311,36 @@
             this.picMonster1.TabStop = false;
             this.picMonster1.Visible = false;
             // 
+            // pnlBattleStatus
+            // 
+            this.pnlBattleStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBattleStatus.Controls.Add(this.picPlayerSkill1);
+            this.pnlBattleStatus.Location = new System.Drawing.Point(0, 480);
+            this.pnlBattleStatus.Name = "pnlBattleStatus";
+            this.pnlBattleStatus.Size = new System.Drawing.Size(800, 120);
+            this.pnlBattleStatus.TabIndex = 14;
+            this.pnlBattleStatus.Visible = false;
+            // 
+            // picPlayerSkill1
+            // 
+            this.picPlayerSkill1.BackColor = System.Drawing.Color.Transparent;
+            this.picPlayerSkill1.Location = new System.Drawing.Point(550, 30);
+            this.picPlayerSkill1.Name = "picPlayerSkill1";
+            this.picPlayerSkill1.Size = new System.Drawing.Size(50, 50);
+            this.picPlayerSkill1.TabIndex = 0;
+            this.picPlayerSkill1.TabStop = false;
+            this.picPlayerSkill1.Visible = false;
+            // 
+            // picEffectBattlePosition
+            // 
+            this.picEffectBattlePosition.BackColor = System.Drawing.Color.Transparent;
+            this.picEffectBattlePosition.Location = new System.Drawing.Point(250, 180);
+            this.picEffectBattlePosition.Name = "picEffectBattlePosition";
+            this.picEffectBattlePosition.Size = new System.Drawing.Size(300, 200);
+            this.picEffectBattlePosition.TabIndex = 12;
+            this.picEffectBattlePosition.TabStop = false;
+            this.picEffectBattlePosition.Visible = false;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +362,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMonster2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBattlePosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonsterBattlePosition)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.pnlMenu.ResumeLayout(false);
@@ -356,6 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSkillMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatusMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster1)).EndInit();
+            this.pnlBattleStatus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayerSkill1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,11 +397,12 @@
         private System.Windows.Forms.Label lblGameStatus;
         private System.Windows.Forms.PictureBox picPlayerBattlePosition;
         private System.Windows.Forms.PictureBox picMonsterBattlePosition;
-        private System.Windows.Forms.PictureBox picEffectBattlePosition;
         private System.Windows.Forms.Label lblPlayerHealthBar;
         private System.Windows.Forms.Label lblMonsterHealthBar;
         private System.Windows.Forms.Panel pnlBattleStatus;
         private System.Windows.Forms.Label lblEXP;
         private System.Windows.Forms.PictureBox picMonster2;
+        private System.Windows.Forms.PictureBox picPlayerSkill1;
+        private System.Windows.Forms.PictureBox picEffectBattlePosition;
     }
 }

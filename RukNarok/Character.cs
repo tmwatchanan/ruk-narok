@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace RukNarok
 {
@@ -10,9 +7,11 @@ namespace RukNarok
     {
         private string name;
         private int hp;
+        private int level;
         private int exp;
         private int attackDamage;
         private Location position;
+        private List<Image> skillList;
 
         internal string Name
         {
@@ -20,6 +19,11 @@ namespace RukNarok
             set;
         }
         internal int HP
+        {
+            get;
+            set;
+        }
+        internal int Level
         {
             get;
             set;
@@ -35,6 +39,11 @@ namespace RukNarok
             set;
         }
         internal Location Position
+        {
+            get;
+            set;
+        }
+        internal List<Image> SkillList
         {
             get;
             set;
@@ -73,11 +82,13 @@ namespace RukNarok
         public Character()
         {
             Name = "Unknown";
+            Level = 0;
             HP = -1;
             EXP = -1;
             AttackDamage = 0;
             //Position.X = 0;
             //Position.Y = 0;
+            SkillList = new List<Image>();
         }
     }
 }
