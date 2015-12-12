@@ -207,7 +207,7 @@ namespace RukNarok
             }
         }
 
-        public void PlayerStartBattle()
+        public void PlayerStartBattle(Monster monster)
         {
             foreach (Model model in ModelList)
             {
@@ -215,6 +215,7 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.GameStatus = "Battle";
+                    mainModel.MonsterBattle = monster;
                     mainModel.Update();
                 }
             }

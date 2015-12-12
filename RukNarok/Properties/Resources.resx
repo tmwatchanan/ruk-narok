@@ -250,7 +250,25 @@
   <data name="KingYamuWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Monster\KingYamu\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SwordSlash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\SwordSlash.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CircularFireLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\CircularFireLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FairySlashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FairySlashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IceBoltLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\IceBoltLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PunchLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\PunchLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SharkWaveLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\SharkWaveLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SwordSlashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\SwordSlashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaterSplashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\WaterSplashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

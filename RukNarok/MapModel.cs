@@ -67,7 +67,7 @@ namespace RukNarok
             Monster babyDesertWolf = new Monster();
             babyDesertWolf.AttackDamage = 1;
             babyDesertWolf.EXP = 10;
-            babyDesertWolf.HP = 50;
+            babyDesertWolf.MaxHP = babyDesertWolf.HP = 50;
             babyDesertWolf.Name = "BabyDesertWolf";
             return babyDesertWolf;
         }
@@ -77,7 +77,7 @@ namespace RukNarok
             Monster kingYamu = new Monster();
             kingYamu.AttackDamage = 2;
             kingYamu.EXP = 20;
-            kingYamu.HP = 100;
+            kingYamu.MaxHP = kingYamu.HP = 100;
             kingYamu.Name = "KingYamu";
             return kingYamu;
         }

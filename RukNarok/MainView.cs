@@ -35,7 +35,8 @@ namespace RukNarok
         private Keys PrePlayerPressKeyUp = Keys.None;
         private Keys PrePlayerPressKeyDown = Keys.None;
         
-        private int attackingTime = 0;
+        private int attackingTime;
+        private int delayTime;
         
         private bool MenuWindow = true;
 
@@ -73,6 +74,9 @@ namespace RukNarok
             tmrCharacterWalking.Start();
             MenuInit();
             BattleLayoutInit();
+            OnPlayerMain();
+            attackingTime = 0;
+            delayTime = 0;
         }
 
         private void MonsterPictureBoxInit()
@@ -114,22 +118,25 @@ namespace RukNarok
             {
                 MapModel map = (MapModel)model;
                 OnBackgroundChanged();
+                if (mainModel.GameStatus == "Battle")
+                {
+                    object objMonsterBattle = Properties.Resources.ResourceManager.GetObject(mainModel.MonsterBattle.Name + "East");
+                    picMonsterBattlePosition.Image = (Image)objMonsterBattle;
+                }
             }
             else if (model is MainModel)
             {
                 OnGameStatusChanged();
-                if (mainModel.GameStatus == "Main")
+                if (mainModel.GameStatus == "Main" && mainModel.BattleStatus == "Inactivity")
                 {
-                    OnPlayerMain();
-                    
                     if (mainModel.MenuStatusChanging) tmrMenu.Start();
                     if (mainModel.CharacterSpawned) OnCharacterSpawn();
                     if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
-                    if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
-                    else tmrCharacterAttacking.Stop();
+                    //if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
+                    //else tmrCharacterAttacking.Stop();
                     //if (mainModel.MonsterCharacter.IsAttacked) ShowCharacterHealthBar();
                 }
-                else if (mainModel.GameStatus == "Battle")
+                else if (mainModel.GameStatus == "Battle" && mainModel.BattleStatus == "Inactivity")
                 {
                     OnPlayerBattle();
                 }
@@ -174,29 +181,58 @@ namespace RukNarok
                     PrePlayerPressKeyDown = Keys.Right;
                     mainModel.PlayerCharacter.Moving = true;
                 }
-
-                if (e.KeyCode == Keys.Space && !mainModel.PlayerCharacter.Attacking)
-                {
-                    mainController.PlayerStartAttack();
-                    //lblHealthBar.Visible = true;
-                }
-
                 if (e.KeyCode == Keys.M)
                 {
                     mainController.ToggleMenu();
                 }
-            }
-            else if (mainModel.GameStatus == "Battle" && mainModel.BattleStatus == "PlayerTurn")
-            {
-                if (e.KeyCode == Keys.Space)
+                if (e.KeyCode == Keys.U)
                 {
-                    mainController.PlayerStopBattle();
-                    picPlayer.Location = new Point(250, 250);
+                    mainModel.PlayerCharacter.EXP += 10;
+                    CheckPlayerLevel();
+                    OnPlayerUpdateEXP();
                 }
-                if (e.KeyCode == Keys.Q)
+            }
+            else if (mainModel.GameStatus == "Battle")
+            {
+                //if (e.KeyCode == Keys.Space)
+                //{
+                //    mainController.PlayerStopBattle();
+                //    picPlayer.Location = new Point(250, 250);
+                //}
+                if (mainModel.BattleStatus == "PlayerTurn")
                 {
-                    picEffectBattlePosition.Image = Properties.Resources.SwordSlash;
-                    tmrCharacterAttacking.Start();
+                    if (e.KeyCode == Keys.Q)
+                    {
+                        lblGameStatus.Text = "Q Attack";
+                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[0];
+                        tmrCharacterAttacking.Start();
+                    }
+                    else if (e.KeyCode == Keys.W)
+                    {
+                        lblGameStatus.Text = "W Attack";
+                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[1];
+                        tmrCharacterAttacking.Start();
+                    }
+                    else if (e.KeyCode == Keys.E)
+                    {
+                        lblGameStatus.Text = "E Attack";
+                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[2];
+                        tmrCharacterAttacking.Start();
+                    }
+                    else if (e.KeyCode == Keys.R)
+                    {
+                        lblGameStatus.Text = "R Attack";
+                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[3];
+                        tmrCharacterAttacking.Start();
+                    }
+                }
+                else if (mainModel.BattleStatus == "MonsterTurn")
+                {
+                    lblGameStatus.Text = "NO This is Monster Turn";
+                }
+                else if (mainModel.BattleStatus == "Waiting")
+                {
+                    lblGameStatus.Text = "NO need Waiting";
                 }
             }
         }
@@ -337,59 +373,103 @@ namespace RukNarok
                     }
                 }
 
-                if (IsPlayerIntersectMonster())
+                if (IsPlayerIntersectMonster() != -1)
                 {
                     lblGameStatus.Text = "Battle!";
-                    mainController.PlayerStartBattle();
+                    mainController.PlayerStartBattle(mapModel.MapList[mapModel.CurrentMap].monsterList[IsPlayerIntersectMonster() - 1]);
                 }
             }
         }
 
-        private bool IsPlayerIntersectMonster()
+        private int IsPlayerIntersectMonster()
         {
             for (int i = 0; i < monsterCount; i++)
             {
                 if (picPlayer.Bounds.IntersectsWith(monsterBox[i + 1].Bounds))
-                    return true;
+                    return i + 1;
             }
-            return false;
+            return -1;
         }
 
         private void tmrCharacterAttacking_Tick(object sender, EventArgs e)
         {
-            if (mainModel.PlayerCharacter.Attacking && attackingTime == 0)
+            //if (mainModel.PlayerCharacter.Attacking && attackingTime == 0)
+            //{
+            //    if (mainModel.PlayerCharacter.Direction == Direction.NorthWest)
+            //    {
+            //        object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthWest));
+            //        if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+            //    }
+            //    else if (mainModel.PlayerCharacter.Direction == Direction.North || mainModel.PlayerCharacter.Direction == Direction.NorthEast)
+            //    {
+            //        object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthEast));
+            //        if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+            //    }
+            //    else if (mainModel.PlayerCharacter.Direction == Direction.West || mainModel.PlayerCharacter.Direction == Direction.SouthWest)
+            //    {
+            //        object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthWest));
+            //        if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+            //    }
+            //    else if (mainModel.PlayerCharacter.Direction == Direction.East || mainModel.PlayerCharacter.Direction == Direction.SouthEast ||
+            //        mainModel.PlayerCharacter.Direction == Direction.South)
+            //    {
+            //        object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthEast));
+            //        if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+            //    }
+            //}
+            if (attackingTime >= 6)
             {
-                if (mainModel.PlayerCharacter.Direction == Direction.NorthWest)
+                //mainController.PlayerStopAttack();
+                picEffectBattlePosition.Image = null;
+                if (mainModel.BattleStatus == "PlayerTurn")
                 {
-                    object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthWest));
-                    if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+                    tmrDelay.Start();
                 }
-                else if (mainModel.PlayerCharacter.Direction == Direction.North || mainModel.PlayerCharacter.Direction == Direction.NorthEast)
+                else if (mainModel.BattleStatus == "MonsterTurn")
                 {
-                    object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.NorthEast));
-                    if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
+                    tmrDelay.Start();
                 }
-                else if (mainModel.PlayerCharacter.Direction == Direction.West || mainModel.PlayerCharacter.Direction == Direction.SouthWest)
-                {
-                    object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthWest));
-                    if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
-                }
-                else if (mainModel.PlayerCharacter.Direction == Direction.East || mainModel.PlayerCharacter.Direction == Direction.SouthEast ||
-                    mainModel.PlayerCharacter.Direction == Direction.South)
-                {
-                    object objPlayerAttacking = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Attack" + Convert.ToString(Direction.SouthEast));
-                    if (picPlayer.Image != (Image)objPlayerAttacking) picPlayer.Image = (Image)objPlayerAttacking;
-                }
+                attackingTime = 0;
+                tmrCharacterAttacking.Stop();
             }
             ++attackingTime;
-            OnPlayerAttack();
-            if (attackingTime == 6)
+        }
+
+        private void tmrDelay_Tick(object sender, EventArgs e)
+        {
+            if (mainModel.PlayerCharacter.HP <= 0 || mainModel.MonsterBattle.HP <= 0)
             {
-                mainController.PlayerStopAttack();
-                attackingTime = 0;
-                picEffectBattlePosition.Image = null;
-                MonsterStartAttack();
+                lblGameStatus.Text = "Battle End";
             }
+            else
+            {
+                if (delayTime < 3)
+                {
+                    if (mainModel.BattleStatus == "PlayerTurn")
+                    {
+                        mainModel.BattleStatus = "PlayerToMonster";
+                    }
+                    else if (mainModel.BattleStatus == "MonsterTurn")
+                    {
+                        mainModel.BattleStatus = "MonsterToPlayer";
+                    }
+                }
+                else
+                {
+                    if (mainModel.BattleStatus == "PlayerToMonster")
+                    {
+                        mainModel.BattleStatus = "MonsterTurn";
+                        MonsterStartAttack();
+                    }
+                    else if (mainModel.BattleStatus == "MonsterToPlayer")
+                    {
+                        mainModel.BattleStatus = "PlayerTurn";
+                    }
+                    delayTime = 0;
+                    tmrDelay.Stop();
+                }
+            }
+            ++delayTime;
         }
 
         private void tmrMenu_Tick(object sender, EventArgs e)
@@ -616,6 +696,15 @@ namespace RukNarok
         //    if (picMonster1.Image != (Image)objMonster1Stand) picMonster1.Image = (Image)objMonster1Stand;
         //}
 
+        private void CheckPlayerLevel()
+        {
+            if (mainModel.PlayerCharacter.EXP >= mainModel.PlayerCharacter.Level * 100)
+            {
+                mainModel.PlayerCharacter.Level++;
+                mainModel.PlayerCharacter.EXP = 0;
+            }
+        }
+
         private void OnPlayerMain()
         {
             OnMapInit();
@@ -628,7 +717,8 @@ namespace RukNarok
             lblEXP.Visible = true;
             lblPlayerHealthBar.Visible = false;
             lblMonsterHealthBar.Visible = false;
-            lblEXP.Padding = 5;
+            CheckPlayerLevel();
+            OnPlayerUpdateEXP();
 
             picPlayerSkill1.Visible = false;
         }
@@ -646,12 +736,20 @@ namespace RukNarok
             picMonsterBattlePosition.Visible = true;
             picEffectBattlePosition.Visible = true;
             lblEXP.Visible = false;
+            lblPlayerHealthBar.Text = "HP : " + mainModel.PlayerCharacter.HP + "/" + mainModel.PlayerCharacter.MaxHP;
             lblPlayerHealthBar.Visible = true;
+            lblMonsterHealthBar.Text = "HP : " + mainModel.MonsterBattle.HP + "/" + mainModel.MonsterBattle.MaxHP;
             lblMonsterHealthBar.Visible = true;
 
             pnlBattleStatus.Visible = true;
             picPlayerSkill1.Image = Properties.Resources.Portal;
             picPlayerSkill1.Visible = true;
+        }
+
+        private void OnPlayerUpdateEXP()
+        {
+            lblEXP.Size = new Size(mainModel.PlayerCharacter.EXP * 800 / (mainModel.PlayerCharacter.Level * 100), 13);
+            lblEXP.Text = "EXP : " + mainModel.PlayerCharacter.EXP + "/" + mainModel.PlayerCharacter.Level * 100;
         }
 
         private void OnPlayerHit()
@@ -687,9 +785,21 @@ namespace RukNarok
             }
         }
 
+        private void BattleWaiting()
+        {
+            if (mainModel.BattleStatus == "Waiting")
+            {
+                tmrCharacterAttacking.Start();
+            }
+        }
+
         private void MonsterStartAttack()
         {
-            mainModel.BattleStatus = "MonsterTurn";
+            if (mainModel.BattleStatus == "MonsterTurn")
+            {
+                picEffectBattlePosition.Image = Properties.Resources.scratch;
+                tmrCharacterAttacking.Start();
+            }
         }
     }
 

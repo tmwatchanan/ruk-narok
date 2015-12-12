@@ -5,9 +5,13 @@ namespace RukNarok
 {
     static class Skill
     {
-        public static Image SwordSlash()
+        public static Image PlayerSwordSlash()
         {
-            return Properties.Resources.SwordSlash;
+            return Properties.Resources.SwordSlashLeft;
+        }
+        public static Image PlayerPunch()
+        {
+            return Properties.Resources.PunchLeft;
         }
     }
 }

@@ -302,6 +302,27 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Skill\SwordSlash.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\CircularFireLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FairySlashLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\IceBoltLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\PunchLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\SharkWaveLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\SwordSlashLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\WaterSplashLeft.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

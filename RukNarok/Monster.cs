@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RukNarok
 {
-    class Monster : Character
+    public class Monster : Character
     {
         private bool healthBar = false;
         internal bool HealthBar

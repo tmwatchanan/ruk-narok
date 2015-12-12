@@ -104,6 +104,13 @@ namespace RukNarok
         public const int MoveDistance = 3;
         public const int MoveDistanceOblique = 2;
 
+        private Monster monsterBattle;
+        internal Monster MonsterBattle
+        {
+            get;
+            set;
+        }
+
         public MainModel()
         {
             GameStatus = "Main";
@@ -137,11 +144,12 @@ namespace RukNarok
         {
             PlayerCharacter = new Player();
             PlayerCharacter.ClassName = "Novice";
-            PlayerCharacter.HP = 100;
+            PlayerCharacter.MaxHP = PlayerCharacter.HP = 100;
             PlayerCharacter.Level = 1;
             PlayerCharacter.EXP = 0;
             PlayerCharacter.AttackDamage = 10;
-            PlayerCharacter.SkillList.Add(Skill.SwordSlash());
+            PlayerCharacter.SkillList.Insert(0, Skill.PlayerSwordSlash());
+            PlayerCharacter.SkillList.Insert(1, Skill.PlayerPunch());
         }
     }
 }

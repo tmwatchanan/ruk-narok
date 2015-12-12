@@ -123,9 +123,39 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CircularFireLeft {
+            get {
+                object obj = ResourceManager.GetObject("CircularFireLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FairySlashLeft {
+            get {
+                object obj = ResourceManager.GetObject("FairySlashLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guild {
             get {
                 object obj = ResourceManager.GetObject("Guild", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IceBoltLeft {
+            get {
+                object obj = ResourceManager.GetObject("IceBoltLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,6 +493,16 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PunchLeft {
+            get {
+                object obj = ResourceManager.GetObject("PunchLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap QuestMenu {
             get {
                 object obj = ResourceManager.GetObject("QuestMenu", resourceCulture);
@@ -476,6 +516,16 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap scratch {
             get {
                 object obj = ResourceManager.GetObject("scratch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SharkWaveLeft {
+            get {
+                object obj = ResourceManager.GetObject("SharkWaveLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +553,19 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SwordSlash {
+        internal static System.Drawing.Bitmap SwordSlashLeft {
             get {
-                object obj = ResourceManager.GetObject("SwordSlash", resourceCulture);
+                object obj = ResourceManager.GetObject("SwordSlashLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WaterSplashLeft {
+            get {
+                object obj = ResourceManager.GetObject("WaterSplashLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

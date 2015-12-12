@@ -3,10 +3,11 @@ using System.Drawing;
 
 namespace RukNarok
 {
-    class Character
+    public class Character
     {
         private string name;
         private int hp;
+        private int maxHP;
         private int level;
         private int exp;
         private int attackDamage;
@@ -19,6 +20,11 @@ namespace RukNarok
             set;
         }
         internal int HP
+        {
+            get;
+            set;
+        }
+        internal int MaxHP
         {
             get;
             set;
@@ -83,8 +89,9 @@ namespace RukNarok
         {
             Name = "Unknown";
             Level = 0;
-            HP = -1;
-            EXP = -1;
+            HP = 0;
+            MaxHP = 0;
+            EXP = 0;
             AttackDamage = 0;
             //Position.X = 0;
             //Position.Y = 0;
