@@ -12,7 +12,7 @@ namespace RukNarok
         private int exp;
         private int attackDamage;
         private Location position;
-        private List<Image> skillList;
+        private List<Skill> skillList;
 
         internal string Name
         {
@@ -49,7 +49,7 @@ namespace RukNarok
             get;
             set;
         }
-        internal List<Image> SkillList
+        internal List<Skill> SkillList
         {
             get;
             set;
@@ -95,7 +95,10 @@ namespace RukNarok
             AttackDamage = 0;
             //Position.X = 0;
             //Position.Y = 0;
-            SkillList = new List<Image>();
+            SkillList = new List<Skill>();
+            Skill skillempty = new Skill();
+            for (int i = 0; i < 4; i++)
+                SkillList.Add(null);
         }
     }
 }

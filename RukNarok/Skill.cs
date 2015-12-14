@@ -3,15 +3,26 @@ using System.Drawing;
 
 namespace RukNarok
 {
-    static class Skill
+    class Skill
     {
-        public static Image PlayerSwordSlash()
+        private Image player;
+        internal Image Player
         {
-            return Properties.Resources.SwordSlashLeft;
+            get;
+            set;
         }
-        public static Image PlayerPunch()
+        private Image monster;
+        internal Image Monster
         {
-            return Properties.Resources.PunchLeft;
+            get;
+            set;
+        }
+
+        private int damage;
+        internal int Damage
+        {
+            get;
+            set;
         }
     }
 }

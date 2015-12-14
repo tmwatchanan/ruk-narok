@@ -56,6 +56,8 @@
             this.pnlBattleStatus = new System.Windows.Forms.Panel();
             this.picPlayerSkill1 = new System.Windows.Forms.PictureBox();
             this.tmrDelay = new System.Windows.Forms.Timer(this.components);
+            this.lblEXPhave = new System.Windows.Forms.Label();
+            this.lblEXPbase = new System.Windows.Forms.Label();
             this.pnlBG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster2)).BeginInit();
@@ -113,6 +115,8 @@
             this.pnlBG.Controls.Add(this.pnlMenu);
             this.pnlBG.Controls.Add(this.picMonster1);
             this.pnlBG.Controls.Add(this.pnlBattleStatus);
+            this.pnlBG.Controls.Add(this.lblEXPhave);
+            this.pnlBG.Controls.Add(this.lblEXPbase);
             this.pnlBG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBG.Location = new System.Drawing.Point(0, 0);
             this.pnlBG.Margin = new System.Windows.Forms.Padding(0);
@@ -164,7 +168,7 @@
             // 
             // lblEXP
             // 
-            this.lblEXP.BackColor = System.Drawing.Color.Gold;
+            this.lblEXP.BackColor = System.Drawing.Color.Transparent;
             this.lblEXP.Location = new System.Drawing.Point(0, 0);
             this.lblEXP.Name = "lblEXP";
             this.lblEXP.Size = new System.Drawing.Size(800, 13);
@@ -347,6 +351,23 @@
             this.tmrDelay.Interval = 200;
             this.tmrDelay.Tick += new System.EventHandler(this.tmrDelay_Tick);
             // 
+            // lblEXPhave
+            // 
+            this.lblEXPhave.BackColor = System.Drawing.Color.Gold;
+            this.lblEXPhave.Location = new System.Drawing.Point(0, 0);
+            this.lblEXPhave.Name = "lblEXPhave";
+            this.lblEXPhave.Size = new System.Drawing.Size(800, 13);
+            this.lblEXPhave.TabIndex = 19;
+            this.lblEXPhave.Text = "label1";
+            // 
+            // lblEXPbase
+            // 
+            this.lblEXPbase.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lblEXPbase.Location = new System.Drawing.Point(0, 0);
+            this.lblEXPbase.Name = "lblEXPbase";
+            this.lblEXPbase.Size = new System.Drawing.Size(800, 13);
+            this.lblEXPbase.TabIndex = 20;
+            // 
             // MainView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -409,5 +430,7 @@
         private System.Windows.Forms.PictureBox picPlayerSkill1;
         private System.Windows.Forms.PictureBox picEffectBattlePosition;
         private System.Windows.Forms.Timer tmrDelay;
+        private System.Windows.Forms.Label lblEXPhave;
+        private System.Windows.Forms.Label lblEXPbase;
     }
 }

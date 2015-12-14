@@ -110,6 +110,17 @@ namespace RukNarok
             get;
             set;
         }
+        
+        internal Skill SwordSlash
+        {
+            get;
+            set;
+        }
+        internal Skill Punch
+        {
+            get;
+            set;
+        }
 
         public MainModel()
         {
@@ -118,6 +129,8 @@ namespace RukNarok
             MenuStatusChanging = false;
             AvatarStatus = false;
             BackgroundChanging = false;
+
+            SkillInit();
 
             CreatePlayerCharacter();
             PlayerCharacter.Direction = Direction.South;//Direction.NULL
@@ -148,8 +161,32 @@ namespace RukNarok
             PlayerCharacter.Level = 1;
             PlayerCharacter.EXP = 0;
             PlayerCharacter.AttackDamage = 10;
-            PlayerCharacter.SkillList.Insert(0, Skill.PlayerSwordSlash());
-            PlayerCharacter.SkillList.Insert(1, Skill.PlayerPunch());
+            PlayerCharacter.SkillList[0] = SwordSlash;
+            PlayerCharacter.SkillList[1] = Punch;
+        }
+
+        private void SkillInit()
+        {
+            SwordSlash = SwordSlashInit();
+            Punch = PunchInit();
+        }
+
+        private Skill SwordSlashInit()
+        {
+            Skill newSwordslash = new Skill();
+            newSwordslash.Damage = 15;
+            //newSwordslash.Monster = Properties.Resources.;
+            newSwordslash.Player = Properties.Resources.SwordSlashLeft;
+            return newSwordslash;
+        }
+
+        private Skill PunchInit()
+        {
+            Skill newPunch = new Skill();
+            newPunch.Damage = 20;
+            //newSwordslash.Monster = Properties.Resources.;
+            newPunch.Player = Properties.Resources.PunchLeft;
+            return newPunch;
         }
     }
 }

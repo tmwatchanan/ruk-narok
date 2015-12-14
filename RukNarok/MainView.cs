@@ -199,31 +199,11 @@ namespace RukNarok
                 //    mainController.PlayerStopBattle();
                 //    picPlayer.Location = new Point(250, 250);
                 //}
-                if (mainModel.BattleStatus == "PlayerTurn")
+                if (mainModel.BattleStatus == "PlayerTurn" && delayTime == 0 && attackingTime == 0)
                 {
-                    if (e.KeyCode == Keys.Q)
+                    if (e.KeyCode == Keys.Q || e.KeyCode == Keys.W || e.KeyCode == Keys.E || e.KeyCode == Keys.R)
                     {
-                        lblGameStatus.Text = "Q Attack";
-                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[0];
-                        tmrCharacterAttacking.Start();
-                    }
-                    else if (e.KeyCode == Keys.W)
-                    {
-                        lblGameStatus.Text = "W Attack";
-                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[1];
-                        tmrCharacterAttacking.Start();
-                    }
-                    else if (e.KeyCode == Keys.E)
-                    {
-                        lblGameStatus.Text = "E Attack";
-                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[2];
-                        tmrCharacterAttacking.Start();
-                    }
-                    else if (e.KeyCode == Keys.R)
-                    {
-                        lblGameStatus.Text = "R Attack";
-                        picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[3];
-                        tmrCharacterAttacking.Start();
+                        PlayerSkillAttack(e.KeyCode);
                     }
                 }
                 else if (mainModel.BattleStatus == "MonsterTurn")
@@ -234,6 +214,38 @@ namespace RukNarok
                 {
                     lblGameStatus.Text = "NO need Waiting";
                 }
+            }
+        }
+
+        private void PlayerSkillAttack(Keys attackKey)
+        {
+            lblGameStatus.Text = Convert.ToString(attackKey) + " Attack";
+            int skillIndex = 0;
+            switch (attackKey)
+            {
+                case Keys.Q:
+                    skillIndex = 0;
+                    break;
+                case Keys.W:
+                    skillIndex = 1;
+                    break;
+                case Keys.E:
+                    skillIndex = 2;
+                    break;
+                case Keys.R:
+                    skillIndex = 3;
+                    break;
+                default:
+                    break;
+            }
+            if (mainModel.PlayerCharacter.SkillList[skillIndex].Player != null)
+            {
+                picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[skillIndex].Player;
+
+            }
+            else
+            {
+                lblGameStatus.Text = "No have this skill";
             }
         }
 
@@ -431,6 +443,7 @@ namespace RukNarok
                 }
                 attackingTime = 0;
                 tmrCharacterAttacking.Stop();
+                return;
             }
             ++attackingTime;
         }
@@ -467,6 +480,7 @@ namespace RukNarok
                     }
                     delayTime = 0;
                     tmrDelay.Stop();
+                    return;
                 }
             }
             ++delayTime;
@@ -748,8 +762,8 @@ namespace RukNarok
 
         private void OnPlayerUpdateEXP()
         {
-            lblEXP.Size = new Size(mainModel.PlayerCharacter.EXP * 800 / (mainModel.PlayerCharacter.Level * 100), 13);
             lblEXP.Text = "EXP : " + mainModel.PlayerCharacter.EXP + "/" + mainModel.PlayerCharacter.Level * 100;
+            lblEXPhave.Size = new Size(mainModel.PlayerCharacter.EXP * 800 / (mainModel.PlayerCharacter.Level * 100), 13);
         }
 
         private void OnPlayerHit()
