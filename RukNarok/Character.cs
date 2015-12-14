@@ -10,6 +10,7 @@ namespace RukNarok
         private int maxHP;
         private int level;
         private int exp;
+        private int maxEXP;
         private int attackDamage;
         private Location position;
         private List<Skill> skillList;
@@ -35,6 +36,11 @@ namespace RukNarok
             set;
         }
         internal int EXP
+        {
+            get;
+            set;
+        }
+        internal int MaxEXP
         {
             get;
             set;
@@ -92,13 +98,12 @@ namespace RukNarok
             HP = 0;
             MaxHP = 0;
             EXP = 0;
+            MaxEXP = 0;
             AttackDamage = 0;
             //Position.X = 0;
             //Position.Y = 0;
             SkillList = new List<Skill>();
             Skill skillempty = new Skill();
-            for (int i = 0; i < 4; i++)
-                SkillList.Add(null);
         }
     }
 }

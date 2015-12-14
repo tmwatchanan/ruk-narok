@@ -229,9 +229,6 @@
   <data name="BattleBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Backgrounds\Battle\BattleBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scratch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\BabyDesertWolf\scratch.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceBattle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceBattle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,25 +247,160 @@
   <data name="KingYamuWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Monster\KingYamu\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CircularFireLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\CircularFireLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\ArrowLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FairySlashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\FairySlashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\ArrowRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IceBoltLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\IceBoltLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BiteLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\BiteLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BiteRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\BiteRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BombLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\BombLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BombRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\BombRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CutMoonLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\CutMoonLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CutMoonRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\CutMoonRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExplosionLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\ExplosionLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExplosionRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\ExplosionRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FireLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FireRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireStabLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FireStabLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireStabRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FireStabRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FlashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlashRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\FlashRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knife1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Knife1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knife1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Knife1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knife2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Knife2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Knife2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Knife2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightningLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\LightningLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightningRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\LightningRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MagicLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\MagicLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MagicRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\MagicRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PoisonLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\PoisonLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PoisonRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\PoisonRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PunchLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Skill\PunchLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SharkWaveLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\SharkWaveLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PunchRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\PunchRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SwordSlashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\SwordSlashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Scratch1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Scratch1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WaterSplashLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Skill\WaterSplashLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Scratch1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Scratch1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scratch2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Scratch2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scratch2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Scratch2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slash1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Slash1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slash1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Slash1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slash2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Slash2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slash2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Slash2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpearLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\SpearLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpearRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\SpearRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stab1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Stab1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stab1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Stab1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stab2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Stab2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stab2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Stab2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TornadoLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\TornadoLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TornadoRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\TornadoRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Water1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Water1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Water2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Water2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wave1Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Wave1Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wave1Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Wave1Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wave2Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Wave2Left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wave2Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Skill\Wave2Right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -249,11 +249,28 @@ namespace RukNarok
                 if (model is MainModel)
                 {
                     MainModel mainModel = (MainModel)model;
-                    switch (mainModel.PlayerCharacter.Level)
+                    mainModel.PlayerCharacter.Level++;
+                    mainModel.PlayerCharacter.EXP = 0;
+                }
+            }
+        }
+
+        public void CharacterChangeHealth(Character character, int hp)
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    if (character is Player)
                     {
-                        default:
-                            break;
+                        ((Player)character).HP += hp;
                     }
+                    else if (character is Monster)
+                    {
+                        ((Monster)character).HP += hp;
+                    }
+                    mainModel.Update();
                 }
             }
         }

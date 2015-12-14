@@ -64,6 +64,11 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Skill.cs" />
     <Compile Include="View.cs" />
     <EmbeddedResource Include="MainView.resx">
@@ -71,14 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -322,6 +322,201 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Images\Characters\Skill\WaterSplashLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\ArrowLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\ArrowRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\BiteLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\BiteRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\BombLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\BombRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\CutMoonLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\CutMoonRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\DragonIceLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\DragonIceRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\DragonLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\DragonRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\ExplosionLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\ExplosionRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FairyLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FairyRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FireLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FireRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FireStabLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FireStabRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FlashLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\FlashRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Knife1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Knife1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Knife2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Knife2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\LightningLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\LightningRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\MagicLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\MagicRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\PoisonLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\PoisonRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\PunchRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Scratch1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Scratch1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Scratch2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Scratch2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash3Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Slash3Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\SpearLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\SpearRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab3Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Stab3Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\TonadoLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\TonadoRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Water2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Water2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\WaterLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\WaterRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Wave1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Wave1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Wave2Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Wave2Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Water1Left.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\Water1Right.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\TornadoLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Skill\TornadoRight.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
