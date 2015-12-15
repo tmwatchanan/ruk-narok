@@ -17,7 +17,7 @@ namespace RukNarok
         {
             
         }
-
+        
         public override void ToggleMenu()
         {
             foreach (Model model in ModelList)
@@ -237,6 +237,8 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.GameStatus = "Main";
+                    mainModel.BattleStatus = "EndToMain";
+                    mainModel.MonsterBattle = null;
                     mainModel.Update();
                 }
             }
@@ -271,6 +273,30 @@ namespace RukNarok
                         ((Monster)character).HP += hp;
                     }
                     mainModel.Update();
+                }
+            }
+        }
+
+        public void StartGame()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "StartGame";
+                }
+            }
+        }
+
+        public void LoadingGame()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "Loading";
                 }
             }
         }

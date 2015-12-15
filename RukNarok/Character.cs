@@ -103,7 +103,6 @@ namespace RukNarok
             //Position.X = 0;
             //Position.Y = 0;
             SkillList = new List<Skill>();
-            Skill skillempty = new Skill();
         }
     }
 }

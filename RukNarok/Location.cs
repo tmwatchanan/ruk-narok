@@ -40,5 +40,11 @@ namespace RukNarok
         {
             return (f_left.X != locationRight.X || f_left.Y != locationRight.Y);
         }
+
+        public Location(int xx = 0, int yy = 0)
+        {
+            X = xx;
+            Y = yy;
+        }
     }
 }

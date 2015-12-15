@@ -403,6 +403,16 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LoadingBar {
+            get {
+                object obj = ResourceManager.GetObject("LoadingBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MagicLeft {
             get {
                 object obj = ResourceManager.GetObject("MagicLeft", resourceCulture);

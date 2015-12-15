@@ -12,7 +12,6 @@ namespace RukNarok
     {
         private Image mainBG;
         private Image battleBG;
-        private Location[] warp;
         public List<Monster> monsterList;
         private int stage;
 
@@ -26,6 +25,11 @@ namespace RukNarok
             get;
             set;
         }
+        internal Location[] Warp
+        {
+            get;
+            set;
+        } = new Location[2];
         internal int Stage
         {
             get;
@@ -34,7 +38,8 @@ namespace RukNarok
 
         public Map(int stage)
         {
-            warp = new Location[2];
+            Warp[0] = new Location(0, 300);
+            Warp[1] = new Location(800, 300);
             monsterList = new List<Monster>();
             Stage = stage;
         }

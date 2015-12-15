@@ -17,7 +17,8 @@ namespace RukNarok
 
         public Monster()
         {
-            
+            for (int i = 0; i < 2; ++i)
+                SkillList.Add(Skill.Bite);
         }
     }
 }

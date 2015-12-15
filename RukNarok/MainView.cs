@@ -34,10 +34,12 @@ namespace RukNarok
         private bool PlayerPressKeyRight = false;
         private Keys PrePlayerPressKeyUp = Keys.None;
         private Keys PrePlayerPressKeyDown = Keys.None;
-        
+
+        private bool playerAttacking;
         private int attackingTime;
         private int delayTime;
-        
+        private int loadingTime;
+
         private bool MenuWindow = true;
 
         private int currentMap;
@@ -74,9 +76,13 @@ namespace RukNarok
             tmrCharacterWalking.Start();
             MenuInit();
             BattleLayoutInit();
+            //mainController.StartGame();
+            mainModel.GameStatus = "Main";
             OnPlayerMain();
+            playerAttacking = false;
             attackingTime = 0;
             delayTime = 0;
+            loadingTime = 0;
         }
 
         private void MonsterPictureBoxInit()
@@ -101,6 +107,8 @@ namespace RukNarok
             picPlayerBattlePosition.SizeMode = PictureBoxSizeMode.CenterImage;
             picEffectBattlePosition.Location = new Point(250, 180);
             picEffectBattlePosition.SizeMode = PictureBoxSizeMode.Zoom;
+            lblBattle.Location = new Point(300, 60);
+            lblBattle.Text = "Fight!";
 
             picPlayerSkill1.Location = new Point(550, 30);
             picPlayerSkill1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -127,14 +135,19 @@ namespace RukNarok
             else if (model is MainModel)
             {
                 OnGameStatusChanged();
-                if (mainModel.GameStatus == "Main" && mainModel.BattleStatus == "Inactivity")
+                if (mainModel.GameStatus == "GameStart")
+                {
+                    OnGameStart();
+                }
+                else if (mainModel.GameStatus == "GameLoading")
+                {
+                    OnGameLoading();
+                }
+                else if (mainModel.GameStatus == "Main" && mainModel.BattleStatus == "Inactivity")
                 {
                     if (mainModel.MenuStatusChanging) tmrMenu.Start();
                     if (mainModel.CharacterSpawned) OnCharacterSpawn();
                     if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
-                    //if (mainModel.PlayerCharacter.Attacking) tmrCharacterAttacking.Start();
-                    //else tmrCharacterAttacking.Stop();
-                    //if (mainModel.MonsterCharacter.IsAttacked) ShowCharacterHealthBar();
                 }
                 else if (mainModel.GameStatus == "Battle")
                 {
@@ -142,12 +155,17 @@ namespace RukNarok
                     {
                         OnPlayerBattle();
                     }
-                    else if (mainModel.BattleStatus == "PlayerTurn" || mainModel.BattleStatus == "PlayerToMonster")
+                    else if (mainModel.BattleStatus == "PlayerTurn" || mainModel.BattleStatus == "MonsterTurn")
                     {
                         OnUpdateHealthBar();
                     }
+                    else if (mainModel.BattleStatus == "EndToMain")
+                    {
+                        mainModel.GameStatus = "Main";
+                        mainModel.BattleStatus = "Inactivity";
+                        OnPlayerMain();
+                    }
                 }
-
             }
         }
 
@@ -202,12 +220,14 @@ namespace RukNarok
             }
             else if (mainModel.GameStatus == "Battle")
             {
-                //if (e.KeyCode == Keys.Space)
-                //{
-                //    mainController.PlayerStopBattle();
-                //    picPlayer.Location = new Point(250, 250);
-                //}
-                if (mainModel.BattleStatus == "PlayerTurn" && delayTime == 0 && attackingTime == 0)
+                if (mainModel.BattleStatus == "End")
+                {
+                    if (e.KeyCode == Keys.Space)
+                    {
+                        mainController.PlayerStopBattle();
+                    }
+                }
+                else if (mainModel.BattleStatus == "PlayerTurn" && !playerAttacking)
                 {
                     if (e.KeyCode == Keys.Q || e.KeyCode == Keys.W || e.KeyCode == Keys.E || e.KeyCode == Keys.R)
                     {
@@ -227,35 +247,39 @@ namespace RukNarok
 
         private void PlayerSkillAttack(Keys attackKey)
         {
-            lblGameStatus.Text = Convert.ToString(attackKey) + " Attack";
-            int skillIndex = 0;
-            switch (attackKey)
+            if (!playerAttacking)
             {
-                case Keys.Q:
-                    skillIndex = 0;
-                    break;
-                case Keys.W:
-                    skillIndex = 1;
-                    break;
-                case Keys.E:
-                    skillIndex = 2;
-                    break;
-                case Keys.R:
-                    skillIndex = 3;
-                    break;
-                default:
-                    break;
+                playerAttacking = true;
+                lblGameStatus.Text = Convert.ToString(attackKey) + " Attack";
+                int skillIndex = 0;
+                switch (attackKey)
+                {
+                    case Keys.Q:
+                        skillIndex = 0;
+                        break;
+                    case Keys.W:
+                        skillIndex = 1;
+                        break;
+                    case Keys.E:
+                        skillIndex = 2;
+                        break;
+                    case Keys.R:
+                        skillIndex = 3;
+                        break;
+                    default:
+                        break;
+                }
+                if (mainModel.PlayerCharacter.SkillList[skillIndex].Player != null)
+                {
+                    picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[skillIndex].Player;
+                    mainController.CharacterChangeHealth(mainModel.MonsterBattle, -mainModel.PlayerCharacter.SkillList[skillIndex].Damage);
+                }
+                else
+                {
+                    lblGameStatus.Text = "No have this skill";
+                }
+                tmrCharacterAttacking.Start();
             }
-            if (mainModel.PlayerCharacter.SkillList[skillIndex].Player != null)
-            {
-                picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[skillIndex].Player;
-                mainController.CharacterChangeHealth(mainModel.MonsterBattle, -mainModel.PlayerCharacter.SkillList[skillIndex].Damage);
-            }
-            else
-            {
-                lblGameStatus.Text = "No have this skill";
-            }
-            tmrCharacterAttacking.Start();
         }
 
         private void MainView_KeyUp(object sender, KeyEventArgs e)
@@ -459,38 +483,47 @@ namespace RukNarok
 
         private void tmrDelay_Tick(object sender, EventArgs e)
         {
-            if (mainModel.PlayerCharacter.HP <= 0 || mainModel.MonsterBattle.HP <= 0)
+            if (mainModel.GameStatus == "Battle")
             {
-                lblGameStatus.Text = "Battle End";
+                if (mainModel.PlayerCharacter.HP <= 0)
+                {
+                    lblGameStatus.Text = "Player Lose";
+                    mainModel.BattleStatus = "End";
+                    OnPlayerLose();
+                }
+                else if (mainModel.MonsterBattle.HP <= 0)
+                {
+                    lblGameStatus.Text = "Player Win";
+                    mainModel.BattleStatus = "End";
+                    OnPlayerWin();
+                }
+            }
+            if (delayTime < 3)
+            {
+                if (mainModel.BattleStatus == "PlayerTurn")
+                {
+                    mainModel.BattleStatus = "PlayerToMonster";
+                }
+                else if (mainModel.BattleStatus == "MonsterTurn")
+                {
+                    mainModel.BattleStatus = "MonsterToPlayer";
+                }
             }
             else
             {
-                if (delayTime < 3)
+                if (mainModel.BattleStatus == "PlayerToMonster")
                 {
-                    if (mainModel.BattleStatus == "PlayerTurn")
-                    {
-                        mainModel.BattleStatus = "PlayerToMonster";
-                    }
-                    else if (mainModel.BattleStatus == "MonsterTurn")
-                    {
-                        mainModel.BattleStatus = "MonsterToPlayer";
-                    }
+                    mainModel.BattleStatus = "MonsterTurn";
+                    MonsterStartAttack();
                 }
-                else
+                else if (mainModel.BattleStatus == "MonsterToPlayer")
                 {
-                    if (mainModel.BattleStatus == "PlayerToMonster")
-                    {
-                        mainModel.BattleStatus = "MonsterTurn";
-                        MonsterStartAttack();
-                    }
-                    else if (mainModel.BattleStatus == "MonsterToPlayer")
-                    {
-                        mainModel.BattleStatus = "PlayerTurn";
-                    }
-                    delayTime = 0;
-                    tmrDelay.Stop();
-                    return;
+                    mainModel.BattleStatus = "PlayerTurn";
+                    playerAttacking = false;
                 }
+                delayTime = 0;
+                tmrDelay.Stop();
+                return;
             }
             ++delayTime;
         }
@@ -729,20 +762,51 @@ namespace RukNarok
             }
         }
 
+        private void OnGameStart()
+        {
+            int rand = random.Next(2);
+            object objGameStartBG = Properties.Resources.ResourceManager.GetObject("StartGame" + rand);
+            if (pnlBG.BackgroundImage != (Image)objGameStartBG) picPlayerBattlePosition.Image = (Image)objGameStartBG;
+        }
+
+        private void OnGameLoading()
+        {
+            picLoading.Visible = true;
+            tmrLoading.Start();
+
+            picPlayer.Visible = false;
+            MonsterVisible(false);
+            picPlayerBattlePosition.Visible = false;
+            picMonsterBattlePosition.Visible = false;
+            picEffectBattlePosition.Visible = false;
+            lblBattle.Visible = false;
+            lblEXP.Visible = false;
+            lblPlayerHealthBar.Visible = false;
+            lblMonsterHealthBar.Visible = false;
+
+            picPlayerSkill1.Visible = false;
+            pnlBattleStatus.Visible = false;
+        }
+
         private void OnPlayerMain()
         {
             OnMapInit();
             OnBackgroundChanged();
+            OnGameStatusChanged();
             picPlayer.Visible = true;
-            picMonster1.Visible = true;
+            MonsterVisible(true);
             picPlayerBattlePosition.Visible = false;
             picMonsterBattlePosition.Visible = false;
             picEffectBattlePosition.Visible = false;
+            pnlBattleStatus.Visible = false;
+            lblBattle.Visible = false;
             lblEXP.Visible = true;
             lblPlayerHealthBar.Visible = false;
             lblMonsterHealthBar.Visible = false;
             CheckPlayerLevel();
             OnPlayerUpdateEXP();
+            tmrCharacterAttacking.Stop();
+            tmrDelay.Stop();
 
             picPlayerSkill1.Visible = false;
         }
@@ -750,6 +814,7 @@ namespace RukNarok
         private void OnPlayerBattle()
         {
             mainModel.BattleStatus = "PlayerTurn";
+            OnGameStatusChanged();
             lblGameStatus.Text = mainModel.BattleStatus;
             OnPlayerStandStill(mainModel.PlayerCharacter.Direction);
             picPlayer.Visible = false;
@@ -759,6 +824,13 @@ namespace RukNarok
             picPlayerBattlePosition.Visible = true;
             picMonsterBattlePosition.Visible = true;
             picEffectBattlePosition.Visible = true;
+            tmrCharacterAttacking.Stop();
+            tmrDelay.Stop();
+            playerAttacking = false;
+            delayTime = 0;
+            attackingTime = 0;
+            lblBattle.Text = "Fight!";
+            lblBattle.Visible = true;
             lblEXP.Visible = false;
             OnUpdateHealthBar();
             lblPlayerHealthBar.Visible = true;
@@ -826,9 +898,38 @@ namespace RukNarok
         {
             if (mainModel.BattleStatus == "MonsterTurn")
             {
-                picEffectBattlePosition.Image = Properties.Resources.BiteLeft;
+                int skillIndex = random.Next(2);
+                mainController.CharacterChangeHealth(mainModel.PlayerCharacter, -mainModel.MonsterBattle.SkillList[skillIndex].Damage);
+                picEffectBattlePosition.Image = mainModel.MonsterBattle.SkillList[skillIndex].Monster;
                 tmrCharacterAttacking.Start();
             }
+        }
+
+        private void OnPlayerWin()
+        {
+            lblBattle.Text = "You WIN";
+            mainModel.PlayerCharacter.EXP += mainModel.MonsterBattle.EXP;
+            tmrDelay.Start();
+        }
+
+        private void OnPlayerLose()
+        {
+            lblBattle.Text = "You LOSE";
+            tmrDelay.Start();
+        }
+
+        private void tmrLoading_Tick(object sender, EventArgs e)
+        {
+            if (loadingTime < 5)
+            {
+                
+            }
+            else
+            {
+                picLoading.Visible = false;
+                tmrLoading.Stop();
+            }
+            ++loadingTime;
         }
     }
 
