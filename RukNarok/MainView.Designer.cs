@@ -35,7 +35,13 @@
             this.tmrMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMonster1 = new System.Windows.Forms.Timer(this.components);
             this.tmrDelay = new System.Windows.Forms.Timer(this.components);
+            this.tmrLoading = new System.Windows.Forms.Timer(this.components);
             this.pnlBG = new System.Windows.Forms.Panel();
+            this.picWarpRight = new System.Windows.Forms.PictureBox();
+            this.picWarpLeft = new System.Windows.Forms.PictureBox();
+            this.lblLoading = new System.Windows.Forms.Label();
+            this.picStartGame = new System.Windows.Forms.PictureBox();
+            this.picLoading = new System.Windows.Forms.PictureBox();
             this.lblBattle = new System.Windows.Forms.Label();
             this.picEffectBattlePosition = new System.Windows.Forms.PictureBox();
             this.picMonster2 = new System.Windows.Forms.PictureBox();
@@ -57,9 +63,11 @@
             this.picMonster1 = new System.Windows.Forms.PictureBox();
             this.pnlBattleStatus = new System.Windows.Forms.Panel();
             this.picPlayerSkill1 = new System.Windows.Forms.PictureBox();
-            this.picLoading = new System.Windows.Forms.PictureBox();
-            this.tmrLoading = new System.Windows.Forms.Timer(this.components);
             this.pnlBG.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarpRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarpLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStartGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBattlePosition)).BeginInit();
@@ -74,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMonster1)).BeginInit();
             this.pnlBattleStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerSkill1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrCharacterWalking
@@ -102,11 +109,19 @@
             this.tmrDelay.Interval = 200;
             this.tmrDelay.Tick += new System.EventHandler(this.tmrDelay_Tick);
             // 
+            // tmrLoading
+            // 
+            this.tmrLoading.Tick += new System.EventHandler(this.tmrLoading_Tick);
+            // 
             // pnlBG
             // 
             this.pnlBG.BackColor = System.Drawing.SystemColors.Control;
             this.pnlBG.BackgroundImage = global::RukNarok.Properties.Resources.MainBG0;
             this.pnlBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBG.Controls.Add(this.picWarpRight);
+            this.pnlBG.Controls.Add(this.picWarpLeft);
+            this.pnlBG.Controls.Add(this.lblLoading);
+            this.pnlBG.Controls.Add(this.picStartGame);
             this.pnlBG.Controls.Add(this.picLoading);
             this.pnlBG.Controls.Add(this.lblBattle);
             this.pnlBG.Controls.Add(this.picEffectBattlePosition);
@@ -129,6 +144,65 @@
             this.pnlBG.Name = "pnlBG";
             this.pnlBG.Size = new System.Drawing.Size(800, 600);
             this.pnlBG.TabIndex = 0;
+            // 
+            // picWarpRight
+            // 
+            this.picWarpRight.BackColor = System.Drawing.Color.Transparent;
+            this.picWarpRight.Image = global::RukNarok.Properties.Resources.Portal;
+            this.picWarpRight.Location = new System.Drawing.Point(755, 300);
+            this.picWarpRight.Name = "picWarpRight";
+            this.picWarpRight.Size = new System.Drawing.Size(55, 85);
+            this.picWarpRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWarpRight.TabIndex = 24;
+            this.picWarpRight.TabStop = false;
+            this.picWarpRight.Visible = false;
+            // 
+            // picWarpLeft
+            // 
+            this.picWarpLeft.BackColor = System.Drawing.Color.Transparent;
+            this.picWarpLeft.Image = global::RukNarok.Properties.Resources.Portal;
+            this.picWarpLeft.Location = new System.Drawing.Point(-7, 300);
+            this.picWarpLeft.Name = "picWarpLeft";
+            this.picWarpLeft.Size = new System.Drawing.Size(55, 85);
+            this.picWarpLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWarpLeft.TabIndex = 23;
+            this.picWarpLeft.TabStop = false;
+            this.picWarpLeft.Visible = false;
+            // 
+            // lblLoading
+            // 
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoading.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblLoading.Location = new System.Drawing.Point(382, 393);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(77, 34);
+            this.lblLoading.TabIndex = 22;
+            this.lblLoading.Text = "Loading";
+            this.lblLoading.Visible = false;
+            // 
+            // picStartGame
+            // 
+            this.picStartGame.Location = new System.Drawing.Point(794, 77);
+            this.picStartGame.Name = "picStartGame";
+            this.picStartGame.Size = new System.Drawing.Size(237, 97);
+            this.picStartGame.TabIndex = 21;
+            this.picStartGame.TabStop = false;
+            this.picStartGame.Visible = false;
+            this.picStartGame.Click += new System.EventHandler(this.picStartGame_Click);
+            // 
+            // picLoading
+            // 
+            this.picLoading.BackColor = System.Drawing.Color.Transparent;
+            this.picLoading.Image = global::RukNarok.Properties.Resources.LoadingBar;
+            this.picLoading.Location = new System.Drawing.Point(350, 430);
+            this.picLoading.Name = "picLoading";
+            this.picLoading.Size = new System.Drawing.Size(160, 50);
+            this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picLoading.TabIndex = 20;
+            this.picLoading.TabStop = false;
+            this.picLoading.Visible = false;
             // 
             // lblBattle
             // 
@@ -348,7 +422,7 @@
             // 
             // pnlBattleStatus
             // 
-            this.pnlBattleStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlBattleStatus.BackColor = System.Drawing.Color.Transparent;
             this.pnlBattleStatus.Controls.Add(this.picPlayerSkill1);
             this.pnlBattleStatus.Location = new System.Drawing.Point(0, 480);
             this.pnlBattleStatus.Name = "pnlBattleStatus";
@@ -361,24 +435,11 @@
             this.picPlayerSkill1.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerSkill1.Location = new System.Drawing.Point(550, 30);
             this.picPlayerSkill1.Name = "picPlayerSkill1";
-            this.picPlayerSkill1.Size = new System.Drawing.Size(50, 50);
+            this.picPlayerSkill1.Size = new System.Drawing.Size(79, 78);
+            this.picPlayerSkill1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPlayerSkill1.TabIndex = 0;
             this.picPlayerSkill1.TabStop = false;
             this.picPlayerSkill1.Visible = false;
-            // 
-            // picLoading
-            // 
-            this.picLoading.BackColor = System.Drawing.Color.Transparent;
-            this.picLoading.Location = new System.Drawing.Point(328, 430);
-            this.picLoading.Name = "picLoading";
-            this.picLoading.Size = new System.Drawing.Size(100, 50);
-            this.picLoading.TabIndex = 20;
-            this.picLoading.TabStop = false;
-            this.picLoading.Visible = false;
-            // 
-            // tmrLoading
-            // 
-            this.tmrLoading.Tick += new System.EventHandler(this.tmrLoading_Tick);
             // 
             // MainView
             // 
@@ -390,12 +451,16 @@
             this.MaximizeBox = false;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ruk Narok v1.1";
+            this.Text = "Ruk Narok v1.6";
             this.Load += new System.EventHandler(this.MainView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlBG.ResumeLayout(false);
             this.pnlBG.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarpRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarpLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStartGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEffectBattlePosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMonster2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerBattlePosition)).EndInit();
@@ -410,7 +475,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMonster1)).EndInit();
             this.pnlBattleStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerSkill1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +510,9 @@
         private System.Windows.Forms.Label lblBattle;
         private System.Windows.Forms.PictureBox picLoading;
         private System.Windows.Forms.Timer tmrLoading;
+        private System.Windows.Forms.PictureBox picStartGame;
+        private System.Windows.Forms.Label lblLoading;
+        private System.Windows.Forms.PictureBox picWarpRight;
+        private System.Windows.Forms.PictureBox picWarpLeft;
     }
 }

@@ -285,6 +285,7 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.GameStatus = "StartGame";
+                    mainModel.Update();
                 }
             }
         }
@@ -297,6 +298,20 @@ namespace RukNarok
                 {
                     MainModel mainModel = (MainModel)model;
                     mainModel.GameStatus = "Loading";
+                    mainModel.Update();
+                }
+            }
+        }
+
+        public void MainGame()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "Main";
+                    mainModel.Update();
                 }
             }
         }

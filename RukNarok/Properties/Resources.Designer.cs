@@ -143,6 +143,25 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BattleMenuBG {
+            get {
+                object obj = ResourceManager.GetObject("BattleMenuBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BattleSound {
+            get {
+                return ResourceManager.GetStream("BattleSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BiteLeft {
             get {
                 object obj = ResourceManager.GetObject("BiteLeft", resourceCulture);
@@ -283,6 +302,16 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GameOver {
+            get {
+                object obj = ResourceManager.GetObject("GameOver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guild {
             get {
                 object obj = ResourceManager.GetObject("Guild", resourceCulture);
@@ -383,6 +412,16 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LegendMenu1 {
+            get {
+                object obj = ResourceManager.GetObject("LegendMenu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LightningLeft {
             get {
                 object obj = ResourceManager.GetObject("LightningLeft", resourceCulture);
@@ -406,6 +445,16 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap LoadingBar {
             get {
                 object obj = ResourceManager.GetObject("LoadingBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingBG {
+            get {
+                object obj = ResourceManager.GetObject("LoadingBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -437,6 +486,55 @@ namespace RukNarok.Properties {
             get {
                 object obj = ResourceManager.GetObject("MainBG0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBG1 {
+            get {
+                object obj = ResourceManager.GetObject("MainBG1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBG2 {
+            get {
+                object obj = ResourceManager.GetObject("MainBG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBG3 {
+            get {
+                object obj = ResourceManager.GetObject("MainBG3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainBG4 {
+            get {
+                object obj = ResourceManager.GetObject("MainBG4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream MainSound {
+            get {
+                return ResourceManager.GetStream("MainSound", resourceCulture);
             }
         }
         
@@ -703,6 +801,16 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PlayGame {
+            get {
+                object obj = ResourceManager.GetObject("PlayGame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PoisonLeft {
             get {
                 object obj = ResourceManager.GetObject("PoisonLeft", resourceCulture);
@@ -907,6 +1015,35 @@ namespace RukNarok.Properties {
             get {
                 object obj = ResourceManager.GetObject("Stab2Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartGame1 {
+            get {
+                object obj = ResourceManager.GetObject("StartGame1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartGame2 {
+            get {
+                object obj = ResourceManager.GetObject("StartGame2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream StartSound {
+            get {
+                return ResourceManager.GetStream("StartSound", resourceCulture);
             }
         }
         

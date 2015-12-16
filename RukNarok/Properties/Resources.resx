@@ -406,4 +406,46 @@
   <data name="LoadingBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\LoadingBar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\GameOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LegendMenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\LegendMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\LoadingBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\PlayGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartGame1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\StartGame1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartGame2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\StartGame2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleMenuBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Interfaces\BattleMenuBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Sounds\BattleSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MainBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\MainBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainBG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\MainBG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainBG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\MainBG3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainBG4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\MainBG4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Sounds\MainSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StartSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Sounds\StartSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

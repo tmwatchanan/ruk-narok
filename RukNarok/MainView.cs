@@ -74,11 +74,12 @@ namespace RukNarok
         {
             tmrCharacterWalking.Interval = 15;
             tmrCharacterWalking.Start();
+            StartGameInit();
             MenuInit();
             BattleLayoutInit();
-            //mainController.StartGame();
-            mainModel.GameStatus = "Main";
-            OnPlayerMain();
+            mainController.StartGame();
+            //mainModel.GameStatus = "Main";
+            //OnPlayerMain();
             playerAttacking = false;
             attackingTime = 0;
             delayTime = 0;
@@ -91,6 +92,17 @@ namespace RukNarok
             currentMap = mapModel.CurrentMap;
             monsterBox[1] = picMonster1;
             monsterBox[2] = picMonster2;
+        }
+
+        private void StartGameInit()
+        {
+            picStartGame.Location = new Point(90, 205);
+            picStartGame.SizeMode = PictureBoxSizeMode.AutoSize;
+            picStartGame.Image = Properties.Resources.PlayGame;
+            picStartGame.Visible = true;
+
+            picLoading.Location = new Point(350, 430);
+            picLoading.Image = Properties.Resources.LoadingBar;
         }
 
         private void MenuInit()
@@ -135,19 +147,21 @@ namespace RukNarok
             else if (model is MainModel)
             {
                 OnGameStatusChanged();
-                if (mainModel.GameStatus == "GameStart")
+                if (mainModel.GameStatus == "StartGame")
                 {
                     OnGameStart();
                 }
-                else if (mainModel.GameStatus == "GameLoading")
+                else if (mainModel.GameStatus == "Loading")
                 {
                     OnGameLoading();
                 }
                 else if (mainModel.GameStatus == "Main" && mainModel.BattleStatus == "Inactivity")
                 {
-                    if (mainModel.MenuStatusChanging) tmrMenu.Start();
+                    //if (mainModel.MenuStatusChanging) tmrMenu.Start();
                     if (mainModel.CharacterSpawned) OnCharacterSpawn();
                     if (mainModel.PlayerCharacter.Moving) OnPlayerMoved();
+                    OnBackgroundChanged();
+                    OnPlayerMain();
                 }
                 else if (mainModel.GameStatus == "Battle")
                 {
@@ -207,10 +221,10 @@ namespace RukNarok
                     PrePlayerPressKeyDown = Keys.Right;
                     mainModel.PlayerCharacter.Moving = true;
                 }
-                if (e.KeyCode == Keys.M)
-                {
-                    mainController.ToggleMenu();
-                }
+                //if (e.KeyCode == Keys.M)
+                //{
+                //    mainController.ToggleMenu();
+                //}
                 if (e.KeyCode == Keys.U)
                 {
                     mainModel.PlayerCharacter.EXP += 10;
@@ -271,6 +285,7 @@ namespace RukNarok
                 }
                 if (mainModel.PlayerCharacter.SkillList[skillIndex].Player != null)
                 {
+                    picPlayerBattlePosition.Image = Properties.Resources.NoviceAttackSouthWest;
                     picEffectBattlePosition.Image = mainModel.PlayerCharacter.SkillList[skillIndex].Player;
                     mainController.CharacterChangeHealth(mainModel.MonsterBattle, -mainModel.PlayerCharacter.SkillList[skillIndex].Damage);
                 }
@@ -612,7 +627,7 @@ namespace RukNarok
         private void OnAvatarToggled()
         {
             if (mainModel.GameStatus == "Main") picAvatar.Visible = true;
-            else if (mainModel.GameStatus == "Battle") picAvatar.Visible = false;
+            else picAvatar.Visible = false;
 
             //if (mainModel.AvatarStatus)
             //{
@@ -764,16 +779,17 @@ namespace RukNarok
 
         private void OnGameStart()
         {
-            int rand = random.Next(2);
+            int rand = random.Next(1, 2);
             object objGameStartBG = Properties.Resources.ResourceManager.GetObject("StartGame" + rand);
-            if (pnlBG.BackgroundImage != (Image)objGameStartBG) picPlayerBattlePosition.Image = (Image)objGameStartBG;
+            if (pnlBG.BackgroundImage != (Image)objGameStartBG) pnlBG.BackgroundImage = (Image)objGameStartBG;
+
+            PlaySound("StartGame");
+
+            InvisibleAllObjects();
         }
 
-        private void OnGameLoading()
+        private void InvisibleAllObjects()
         {
-            picLoading.Visible = true;
-            tmrLoading.Start();
-
             picPlayer.Visible = false;
             MonsterVisible(false);
             picPlayerBattlePosition.Visible = false;
@@ -783,9 +799,26 @@ namespace RukNarok
             lblEXP.Visible = false;
             lblPlayerHealthBar.Visible = false;
             lblMonsterHealthBar.Visible = false;
+            picAvatar.Visible = false;
+            pnlMenu.Visible = false;
+            picWarpLeft.Visible = false;
+            picWarpRight.Visible = false;
+            //picStartGame.Visible = false;
 
             picPlayerSkill1.Visible = false;
             pnlBattleStatus.Visible = false;
+        }
+
+        private void OnGameLoading()
+        {
+            pnlBG.BackgroundImage = Properties.Resources.LoadingBG;
+            picStartGame.Visible = false;
+            lblLoading.Visible = true;
+            picLoading.Visible = true;
+            tmrLoading.Start();
+            mainModel.Player.Stop();
+
+            InvisibleAllObjects();
         }
 
         private void OnPlayerMain()
@@ -807,6 +840,8 @@ namespace RukNarok
             OnPlayerUpdateEXP();
             tmrCharacterAttacking.Stop();
             tmrDelay.Stop();
+
+            PlaySound("Main");
 
             picPlayerSkill1.Visible = false;
         }
@@ -836,6 +871,9 @@ namespace RukNarok
             lblPlayerHealthBar.Visible = true;
             lblMonsterHealthBar.Visible = true;
 
+            PlaySound("Battle");
+
+            pnlBattleStatus.BackgroundImage = Properties.Resources.BattleMenuBG;
             pnlBattleStatus.Visible = true;
             picPlayerSkill1.Image = Properties.Resources.Portal;
             picPlayerSkill1.Visible = true;
@@ -875,6 +913,10 @@ namespace RukNarok
                 } while (randX < 125 && randY < 125);
                 monsterBox[i + 1].Location = new Point(randX, randY);
              }
+            picWarpLeft.Location = new Point(-7, 300);
+            picWarpLeft.Visible = false;
+            picWarpRight.Location = new Point(755, 300);
+            picWarpRight.Visible = false;
             MonsterVisible(true);
         }
 
@@ -920,16 +962,84 @@ namespace RukNarok
 
         private void tmrLoading_Tick(object sender, EventArgs e)
         {
-            if (loadingTime < 5)
+            if (loadingTime == 4)
             {
-                
+                lblLoading.Text = ".Loading.";
+                lblLoading.Left -= 2;
             }
-            else
+            else if (loadingTime == 9)
             {
+                lblLoading.Text = "..Loading..";
+                lblLoading.Left -= 2;
+            }
+            else if (loadingTime == 14)
+            {
+                lblLoading.Text = "...Loading...";
+                lblLoading.Left -= 2;
+            }
+            else if (loadingTime == 19)
+            {
+                lblLoading.Text = "....Loading....";
+                lblLoading.Left -= 2;
+            }
+            else if (loadingTime >= 20)
+            {
+                lblLoading.Text = "Loading";
+                lblLoading.Left += 8;
+                lblLoading.Visible = false;
                 picLoading.Visible = false;
+                mainController.MainGame();
                 tmrLoading.Stop();
+                loadingTime = 0;
             }
             ++loadingTime;
+        }
+
+        private void picStartGame_Click(object sender, EventArgs e)
+        {
+            mainController.LoadingGame();
+        }
+
+        private void PlaySound(string titleSound)
+        {
+            switch (titleSound)
+            {
+                case "StartGame":
+                    try
+                    {
+                        mainModel.Player = new System.Media.SoundPlayer(Properties.Resources.StartSound);
+                        mainModel.Player.PlayLooping();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error playing start game sound");
+                    }
+                    break;
+                case "Main":
+                    try
+                    {
+                        mainModel.Player = new System.Media.SoundPlayer(Properties.Resources.MainSound);
+                        mainModel.Player.PlayLooping();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error playing main sound");
+                    }
+                    break;
+                case "Battle":
+                    try
+                    {
+                        mainModel.Player = new System.Media.SoundPlayer(Properties.Resources.BattleSound);
+                        mainModel.Player.PlayLooping();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error playing battle sound");
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

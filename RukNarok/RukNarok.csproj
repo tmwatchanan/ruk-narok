@@ -521,6 +521,45 @@
   <ItemGroup>
     <None Include="Properties\Images\Interfaces\LoadingBar.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\GameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\LoadingBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\StartGame1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\StartGame2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\PlayGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\MainBG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\MainBG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\MainBG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\MainBG4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Sounds\BattleSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Sounds\MainSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Sounds\StartSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Interfaces\BattleMenuBG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
