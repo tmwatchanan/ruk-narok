@@ -668,6 +668,84 @@
   <ItemGroup>
     <None Include="Properties\Images\Characters\Monster\LeafCatWest.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BaphometAttackEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BaphometAttackWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BaphometEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BaphometWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BlazerAttackEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BlazerAttackWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BlazerEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\BlazerWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\ObeauneAttackEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\ObeauneAttackWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\ObeauneEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\ObeauneWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\SoheAttackeEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\SoheeAttackWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\SoheeEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\SoheeWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\StingAttackEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\StingAttackWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\StingEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\StingWest.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Characters\Monster\SoheeAttackEast.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\BattleBG0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\BattleBG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\BattleBG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\BattleBG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\Backgrounds\BattleBG4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -338,5 +338,18 @@ namespace RukNarok
                 }
             }
         }
+
+        public void GameOver()
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MainModel)
+                {
+                    MainModel mainModel = (MainModel)model;
+                    mainModel.GameStatus = "GameOver";
+                    mainModel.Update();
+                }
+            }
+        }
     }
 }

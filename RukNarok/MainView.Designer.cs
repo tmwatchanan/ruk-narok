@@ -529,7 +529,7 @@
             this.MaximizeBox = false;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ruk Narok v1.7";
+            this.Text = "Ruk Narok v1.8";
             this.Load += new System.EventHandler(this.MainView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);

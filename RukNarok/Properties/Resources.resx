@@ -136,9 +136,6 @@
   <data name="NoviceAttackNorthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceAttackNorthEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BattleBG0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Backgrounds\Battle\BattleBG0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceWalkNorth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkNorth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -210,9 +207,6 @@
   </data>
   <data name="NoviceWalkWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BattleBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Backgrounds\Battle\BattleBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NoviceBattle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceBattle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -427,11 +421,50 @@
   <data name="BabyDesertWolfWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Monster\BabyDesertWolfWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BaphometAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BaphometAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BaphometAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BaphometAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BaphometEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BaphometEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BaphometWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BaphometWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleBG0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\BattleBG0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\BattleBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleBG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\BattleBG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleBG3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\BattleBG3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BattleBG4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\BattleBG4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BattleMenuBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\BattleMenuBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BattleSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Sounds\BattleSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BlazerAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BlazerAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlazerAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BlazerAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlazerEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BlazerEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlazerWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BlazerWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChonchonAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Monster\ChonchonAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -538,7 +571,43 @@
   <data name="MainSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Sounds\MainSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ObeauneAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ObeauneAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ObeauneAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ObeauneAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ObeauneEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ObeauneEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ObeauneWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ObeauneWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoheeAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\SoheeAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoheeAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\SoheeAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoheeEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\SoheeEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoheeWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\SoheeWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="StartSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Sounds\StartSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StingAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\StingAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StingAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\StingAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StingEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\StingEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StingWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\StingWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

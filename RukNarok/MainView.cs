@@ -187,6 +187,11 @@ namespace RukNarok
                         OnPlayerMain();
                     }
                 }
+                else if (mainModel.GameStatus == "GameOver")
+                {
+                    InvisibleAllObjects();
+                    pnlBG.BackgroundImage = Properties.Resources.GameOver;
+                }
             }
         }
 
@@ -573,6 +578,7 @@ namespace RukNarok
                 else if (mainModel.BattleStatus == "MonsterToPlayer")
                 {
                     mainModel.BattleStatus = "PlayerTurn";
+                    PlayerStopAttackAnimation();
                     playerAttacking = false;
                 }
                 delayTime = 0;
@@ -870,7 +876,7 @@ namespace RukNarok
             picPlayer.Visible = true;
             MonsterVisible(true);
             if (mapModel.CurrentMap != 0) picWarpLeft.Visible = true;
-            picWarpRight.Visible = true;
+            if (mapModel.CurrentMap <= MapModel.MaxMap) picWarpRight.Visible = true;
             picPlayerBattlePosition.Visible = false;
             picMonsterBattlePosition.Visible = false;
             picEffectBattlePosition.Visible = false;
@@ -951,7 +957,11 @@ namespace RukNarok
                 directionMonster[1] = "East";
                 lblGameStatus.Text = Convert.ToString(mapModel.CurrentMap);
                 object objMonster = Properties.Resources.ResourceManager.GetObject(mapModel.MapList[mapModel.CurrentMap].monsterList[i].Name + directionMonster[random.Next(2)]);
-                if (monsterBox[i] != null) monsterBox[i].Image = (Image)objMonster;
+                if (monsterBox[i] != null)
+                {
+                    monsterBox[i].Image = (Image)objMonster;
+                    monsterBox[i].SizeMode = PictureBoxSizeMode.AutoSize; ;
+                }
                 int randX, randY;
                 do
                 {
@@ -1023,6 +1033,7 @@ namespace RukNarok
             lblBattle.Text = "You LOSE";
             object objPlayerDead = Properties.Resources.ResourceManager.GetObject(mainModel.PlayerCharacter.ClassName + "Dead");
             if (picPlayerBattlePosition.Image != (Image)objPlayerDead) picPlayerBattlePosition.Image = (Image)objPlayerDead;
+            mainController.GameOver();
             tmrDelay.Start();
         }
 

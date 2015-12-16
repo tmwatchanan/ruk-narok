@@ -6,7 +6,7 @@ namespace RukNarok
 {
     class MapModel : Model
     {
-        public const int MaxMap = 3;
+        public const int MaxMap = 5;
 
         private List<Map> mapList;
         private int currentMap;
@@ -24,6 +24,12 @@ namespace RukNarok
             get;
             set;
         }
+
+        public void Update()
+        {
+            NotifyAll();
+        }
+
         public MapModel()
         {
             CurrentMap = 0;
@@ -41,18 +47,33 @@ namespace RukNarok
                 switch (i)
                 {
                     case 0:
-                        addMap.monsterList.Add(BabyDesertWolf());
+                        addMap.monsterList.Add(LeafCat());
                         addMap.monsterList.Add(KingYamu());
+                        addMap.monsterList.Add(Chonchon());
                         break;
                     case 1:
                         addMap.monsterList.Add(Alligator());
+                        addMap.monsterList.Add(BabyDesertWolf());
+                        addMap.monsterList.Add(Alligator());
+                        addMap.monsterList.Add(BabyDesertWolf());
                         break;
                     case 2:
-
+                        addMap.monsterList.Add(Alligator());
+                        addMap.monsterList.Add(ElderWillow());
+                        addMap.monsterList.Add(Galapago());
+                        addMap.monsterList.Add(ElderWillow());
+                        addMap.monsterList.Add(Obeaune());
+                        addMap.monsterList.Add(Blazer());
                         break;
                     case 3:
+                        addMap.monsterList.Add(Jakk());
+                        addMap.monsterList.Add(Sohee());
+                        addMap.monsterList.Add(Jakk());
+                        addMap.monsterList.Add(Sohee());
+                        addMap.monsterList.Add(Sting());
                         break;
                     case 4:
+                        addMap.monsterList.Add(Baphomet());
                         break;
                     default:
                         break;
@@ -61,11 +82,6 @@ namespace RukNarok
                 addMap = null;
             }
             Update();
-        }
-
-        public void Update()
-        {
-            NotifyAll();
         }
 
         private Monster BabyDesertWolf()
@@ -78,7 +94,6 @@ namespace RukNarok
             monster.Death = false;
             return monster;
         }
-
         private Monster KingYamu()
         {
             Monster monster = new Monster();
@@ -89,7 +104,6 @@ namespace RukNarok
             monster.Death = false;
             return monster;
         }
-
         private Monster Alligator()
         {
             Monster monster = new Monster();
@@ -100,7 +114,115 @@ namespace RukNarok
             monster.Death = false;
             return monster;
         }
-
-
+        private Monster Chonchon()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Chonchon";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Flora()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Flora";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Galapago()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Galapago";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Jakk()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Jakk";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster LeafCat()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "LeafCat";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster ElderWillow()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "ElderWillow";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Blazer()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Blazer";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Obeaune()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Obeaune";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Sohee()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Sohee";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Sting()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Sting";
+            monster.Death = false;
+            return monster;
+        }
+        private Monster Baphomet()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Baphomet";
+            monster.Death = false;
+            return monster;
+        }
     }
 }

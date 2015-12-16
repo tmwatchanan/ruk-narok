@@ -163,6 +163,46 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BaphometAttackEast {
+            get {
+                object obj = ResourceManager.GetObject("BaphometAttackEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BaphometAttackWest {
+            get {
+                object obj = ResourceManager.GetObject("BaphometAttackWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BaphometEast {
+            get {
+                object obj = ResourceManager.GetObject("BaphometEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BaphometWest {
+            get {
+                object obj = ResourceManager.GetObject("BaphometWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BattleBG0 {
             get {
                 object obj = ResourceManager.GetObject("BattleBG0", resourceCulture);
@@ -176,6 +216,36 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap BattleBG1 {
             get {
                 object obj = ResourceManager.GetObject("BattleBG1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleBG2 {
+            get {
+                object obj = ResourceManager.GetObject("BattleBG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleBG3 {
+            get {
+                object obj = ResourceManager.GetObject("BattleBG3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BattleBG4 {
+            get {
+                object obj = ResourceManager.GetObject("BattleBG4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -215,6 +285,46 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap BiteRight {
             get {
                 object obj = ResourceManager.GetObject("BiteRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlazerAttackEast {
+            get {
+                object obj = ResourceManager.GetObject("BlazerAttackEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlazerAttackWest {
+            get {
+                object obj = ResourceManager.GetObject("BlazerAttackWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlazerEast {
+            get {
+                object obj = ResourceManager.GetObject("BlazerEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlazerWest {
+            get {
+                object obj = ResourceManager.GetObject("BlazerWest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1111,6 +1221,46 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ObeauneAttackEast {
+            get {
+                object obj = ResourceManager.GetObject("ObeauneAttackEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObeauneAttackWest {
+            get {
+                object obj = ResourceManager.GetObject("ObeauneAttackWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObeauneEast {
+            get {
+                object obj = ResourceManager.GetObject("ObeauneEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ObeauneWest {
+            get {
+                object obj = ResourceManager.GetObject("ObeauneWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlayGame {
             get {
                 object obj = ResourceManager.GetObject("PlayGame", resourceCulture);
@@ -1271,6 +1421,46 @@ namespace RukNarok.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SoheeAttackEast {
+            get {
+                object obj = ResourceManager.GetObject("SoheeAttackEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoheeAttackWest {
+            get {
+                object obj = ResourceManager.GetObject("SoheeAttackWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoheeEast {
+            get {
+                object obj = ResourceManager.GetObject("SoheeEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoheeWest {
+            get {
+                object obj = ResourceManager.GetObject("SoheeWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SpearLeft {
             get {
                 object obj = ResourceManager.GetObject("SpearLeft", resourceCulture);
@@ -1363,6 +1553,46 @@ namespace RukNarok.Properties {
         internal static System.Drawing.Bitmap StatusMenu {
             get {
                 object obj = ResourceManager.GetObject("StatusMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StingAttackEast {
+            get {
+                object obj = ResourceManager.GetObject("StingAttackEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StingAttackWest {
+            get {
+                object obj = ResourceManager.GetObject("StingAttackWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StingEast {
+            get {
+                object obj = ResourceManager.GetObject("StingEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StingWest {
+            get {
+                object obj = ResourceManager.GetObject("StingWest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
