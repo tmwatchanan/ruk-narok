@@ -121,9 +121,6 @@
   <data name="MainBG0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Backgrounds\MainBG0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BabyDesertWolfAttackSouthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfAttackSouthEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceWalkNorthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkNorthWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,9 +142,6 @@
   <data name="NoviceWalkNorth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkNorth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BabyDesertWolfAttackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfAttackLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceWalkSouth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkSouth.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,9 +150,6 @@
   </data>
   <data name="NoviceStandSouthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceStandSouthEast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BabyDesertWolfWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LegendAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\LegendAvatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,9 +181,6 @@
   <data name="NoviceStandSouth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceStandSouth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BabyDesertWolfEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\BabyDesertWolf\BabyDesertWolfEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NoviceAttackNorthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceAttackNorthWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,9 +211,6 @@
   <data name="NoviceWalkWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceWalkWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Guild" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Backgrounds\Battle\Guild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BattleBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Backgrounds\Battle\BattleBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -240,12 +225,6 @@
   </data>
   <data name="NoviceOnHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Player\Novice\NoviceOnHit.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KingYamuEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\KingYamu\KingYamuEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KingYamuWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Images\Characters\Monster\KingYamu\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Characters\Skill\ArrowLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,11 +403,125 @@
   <data name="StartGame2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\StartGame2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AligatorAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\AligatorAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AligatorAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\AligatorAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlligatorEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\AlligatorEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlligatorWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\AlligatorWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BabyDesertWolfAttackLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BabyDesertWolfAttackLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BabyDesertWolfAttackSouthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BabyDesertWolfAttackSouthEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BabyDesertWolfEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BabyDesertWolfEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BabyDesertWolfWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\BabyDesertWolfWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BattleMenuBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Interfaces\BattleMenuBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BattleSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Sounds\BattleSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChonchonAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ChonchonAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChonchonAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ChonchonAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChonchonDeadEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ChonchonDeadEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChonchonEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ChonchonEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChonchonWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ChonchonWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ElderWillowAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ElderWillowAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ElderWillowAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ElderWillowAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ElderWillowEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ElderWillowEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ElderWillowWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\ElderWillowWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FloraAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\FloraAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FloraAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\FloraAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FloraEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\FloraEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FloraWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\FloraWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GalapagoAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\GalapagoAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GalapagoAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\GalapagoAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GalapagoEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\GalapagoEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GalapagoWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\GalapagoWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JakkAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\JakkAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JakkAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\JakkAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JakkEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\JakkEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JakkWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\JakkWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KingYamuEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamuEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KingYamuEast1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamuEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KingYamuWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KingYamuWest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\KingYamuWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeafCatAttackEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\LeafCatAttackEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeafCatAttackWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\LeafCatAttackWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeafCatEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\LeafCatEast.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeafCatWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Characters\Monster\LeafCatWest.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainBG01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Backgrounds\MainBG0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Backgrounds\MainBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

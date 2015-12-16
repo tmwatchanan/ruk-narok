@@ -41,6 +41,8 @@ namespace RukNarok
             Warp[0] = new Location(0, 300);
             Warp[1] = new Location(800, 300);
             monsterList = new List<Monster>();
+            MainBG = null;
+            BattleBG = null;
             Stage = stage;
         }
     }

@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace RukNarok
 {
     class MapModel : Model
     {
-        private const int maxMap = 1;
+        public const int MaxMap = 3;
 
         private List<Map> mapList;
         private int currentMap;
@@ -23,36 +24,41 @@ namespace RukNarok
             get;
             set;
         }
-
-        private int monsterCount;
-        internal int MonsterCount
-        {
-            get;
-            set;
-        }
-
         public MapModel()
         {
             CurrentMap = 0;
             MapList = new List<Map>();
-            for (int i = 0; i < maxMap; ++i)
+            Map addMap;
+            for (int i = 0; i < MaxMap; ++i)
             {
-                Map addMap = new Map(i);
-                object objMainBG = Properties.Resources.ResourceManager.GetObject("MainBG" + i);
+                addMap = new Map(i);
+                object objMainBG = Properties.Resources.ResourceManager.GetObject("MainBG" + Convert.ToString(i));
                 addMap.MainBG = (Image)objMainBG;
-                object objBattleBG = Properties.Resources.ResourceManager.GetObject("BattleBG" + i);
+                objMainBG = null;
+                object objBattleBG = Properties.Resources.ResourceManager.GetObject("BattleBG" + Convert.ToString(i));
                 addMap.BattleBG = (Image)objBattleBG;
+                objBattleBG = null;
                 switch (i)
                 {
                     case 0:
                         addMap.monsterList.Add(BabyDesertWolf());
                         addMap.monsterList.Add(KingYamu());
                         break;
+                    case 1:
+                        addMap.monsterList.Add(Alligator());
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
                     default:
                         break;
                 }
-                MonsterCount = addMap.monsterList.Count;
                 MapList.Add(addMap);
+                addMap = null;
             }
             Update();
         }
@@ -64,22 +70,37 @@ namespace RukNarok
 
         private Monster BabyDesertWolf()
         {
-            Monster babyDesertWolf = new Monster();
-            babyDesertWolf.AttackDamage = 1;
-            babyDesertWolf.EXP = 10;
-            babyDesertWolf.MaxHP = babyDesertWolf.HP = 50;
-            babyDesertWolf.Name = "BabyDesertWolf";
-            return babyDesertWolf;
+            Monster monster = new Monster();
+            monster.AttackDamage = 1;
+            monster.EXP = 10;
+            monster.MaxHP = monster.HP = 50;
+            monster.Name = "BabyDesertWolf";
+            monster.Death = false;
+            return monster;
         }
 
         private Monster KingYamu()
         {
-            Monster kingYamu = new Monster();
-            kingYamu.AttackDamage = 2;
-            kingYamu.EXP = 20;
-            kingYamu.MaxHP = kingYamu.HP = 100;
-            kingYamu.Name = "KingYamu";
-            return kingYamu;
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "KingYamu";
+            monster.Death = false;
+            return monster;
         }
+
+        private Monster Alligator()
+        {
+            Monster monster = new Monster();
+            monster.AttackDamage = 2;
+            monster.EXP = 20;
+            monster.MaxHP = monster.HP = 100;
+            monster.Name = "Alligator";
+            monster.Death = false;
+            return monster;
+        }
+
+
     }
 }

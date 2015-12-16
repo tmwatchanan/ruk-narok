@@ -37,6 +37,12 @@
             this.tmrDelay = new System.Windows.Forms.Timer(this.components);
             this.tmrLoading = new System.Windows.Forms.Timer(this.components);
             this.pnlBG = new System.Windows.Forms.Panel();
+            this.picMonster7 = new System.Windows.Forms.PictureBox();
+            this.picMonster6 = new System.Windows.Forms.PictureBox();
+            this.picMonster5 = new System.Windows.Forms.PictureBox();
+            this.picMonster4 = new System.Windows.Forms.PictureBox();
+            this.picMonster3 = new System.Windows.Forms.PictureBox();
+            this.picMonster0 = new System.Windows.Forms.PictureBox();
             this.picWarpRight = new System.Windows.Forms.PictureBox();
             this.picWarpLeft = new System.Windows.Forms.PictureBox();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -64,6 +70,12 @@
             this.pnlBattleStatus = new System.Windows.Forms.Panel();
             this.picPlayerSkill1 = new System.Windows.Forms.PictureBox();
             this.pnlBG.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWarpRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWarpLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStartGame)).BeginInit();
@@ -118,6 +130,12 @@
             this.pnlBG.BackColor = System.Drawing.SystemColors.Control;
             this.pnlBG.BackgroundImage = global::RukNarok.Properties.Resources.MainBG0;
             this.pnlBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBG.Controls.Add(this.picMonster7);
+            this.pnlBG.Controls.Add(this.picMonster6);
+            this.pnlBG.Controls.Add(this.picMonster5);
+            this.pnlBG.Controls.Add(this.picMonster4);
+            this.pnlBG.Controls.Add(this.picMonster3);
+            this.pnlBG.Controls.Add(this.picMonster0);
             this.pnlBG.Controls.Add(this.picWarpRight);
             this.pnlBG.Controls.Add(this.picWarpLeft);
             this.pnlBG.Controls.Add(this.lblLoading);
@@ -144,6 +162,66 @@
             this.pnlBG.Name = "pnlBG";
             this.pnlBG.Size = new System.Drawing.Size(800, 600);
             this.pnlBG.TabIndex = 0;
+            // 
+            // picMonster7
+            // 
+            this.picMonster7.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster7.Location = new System.Drawing.Point(199, 215);
+            this.picMonster7.Name = "picMonster7";
+            this.picMonster7.Size = new System.Drawing.Size(100, 50);
+            this.picMonster7.TabIndex = 30;
+            this.picMonster7.TabStop = false;
+            this.picMonster7.Visible = false;
+            // 
+            // picMonster6
+            // 
+            this.picMonster6.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster6.Location = new System.Drawing.Point(550, 282);
+            this.picMonster6.Name = "picMonster6";
+            this.picMonster6.Size = new System.Drawing.Size(100, 50);
+            this.picMonster6.TabIndex = 29;
+            this.picMonster6.TabStop = false;
+            this.picMonster6.Visible = false;
+            // 
+            // picMonster5
+            // 
+            this.picMonster5.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster5.Location = new System.Drawing.Point(484, 167);
+            this.picMonster5.Name = "picMonster5";
+            this.picMonster5.Size = new System.Drawing.Size(100, 50);
+            this.picMonster5.TabIndex = 28;
+            this.picMonster5.TabStop = false;
+            this.picMonster5.Visible = false;
+            // 
+            // picMonster4
+            // 
+            this.picMonster4.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster4.Location = new System.Drawing.Point(550, 230);
+            this.picMonster4.Name = "picMonster4";
+            this.picMonster4.Size = new System.Drawing.Size(100, 50);
+            this.picMonster4.TabIndex = 27;
+            this.picMonster4.TabStop = false;
+            this.picMonster4.Visible = false;
+            // 
+            // picMonster3
+            // 
+            this.picMonster3.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster3.Location = new System.Drawing.Point(410, 102);
+            this.picMonster3.Name = "picMonster3";
+            this.picMonster3.Size = new System.Drawing.Size(100, 50);
+            this.picMonster3.TabIndex = 26;
+            this.picMonster3.TabStop = false;
+            this.picMonster3.Visible = false;
+            // 
+            // picMonster0
+            // 
+            this.picMonster0.BackColor = System.Drawing.Color.Transparent;
+            this.picMonster0.Location = new System.Drawing.Point(564, 119);
+            this.picMonster0.Name = "picMonster0";
+            this.picMonster0.Size = new System.Drawing.Size(100, 50);
+            this.picMonster0.TabIndex = 25;
+            this.picMonster0.TabStop = false;
+            this.picMonster0.Visible = false;
             // 
             // picWarpRight
             // 
@@ -451,12 +529,18 @@
             this.MaximizeBox = false;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ruk Narok v1.6";
+            this.Text = "Ruk Narok v1.7";
             this.Load += new System.EventHandler(this.MainView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainView_KeyUp);
             this.pnlBG.ResumeLayout(false);
             this.pnlBG.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMonster0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWarpRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWarpLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStartGame)).EndInit();
@@ -514,5 +598,11 @@
         private System.Windows.Forms.Label lblLoading;
         private System.Windows.Forms.PictureBox picWarpRight;
         private System.Windows.Forms.PictureBox picWarpLeft;
+        private System.Windows.Forms.PictureBox picMonster0;
+        private System.Windows.Forms.PictureBox picMonster7;
+        private System.Windows.Forms.PictureBox picMonster6;
+        private System.Windows.Forms.PictureBox picMonster5;
+        private System.Windows.Forms.PictureBox picMonster4;
+        private System.Windows.Forms.PictureBox picMonster3;
     }
 }

@@ -106,6 +106,11 @@ namespace RukNarok
             get;
             set;
         }
+        internal int monsterBattleIndex
+        {
+            get;
+            set;
+        }
 
         public SoundPlayer Player = new SoundPlayer();
 

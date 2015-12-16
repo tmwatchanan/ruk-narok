@@ -14,6 +14,7 @@ namespace RukNarok
         private int attackDamage;
         private Location position;
         private List<Skill> skillList;
+        private bool death;
 
         internal string Name
         {
@@ -56,6 +57,11 @@ namespace RukNarok
             set;
         }
         internal List<Skill> SkillList
+        {
+            get;
+            set;
+        }
+        internal bool Death
         {
             get;
             set;
@@ -103,6 +109,7 @@ namespace RukNarok
             //Position.X = 0;
             //Position.Y = 0;
             SkillList = new List<Skill>();
+            Death = true;
         }
     }
 }

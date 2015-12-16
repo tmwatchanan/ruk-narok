@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RukNarok
 {
     public class MainController : Controller
     {
-        public const int MapZero = 0;
-        public const int MapOne = 1;
-        public const int MapTwo = 2;
+        public enum Warp
+        {
+            LEFT,
+            RIGHT
+        };
+        public Warp WarpDirection;
         
         public MainController()
         {
@@ -39,7 +39,7 @@ namespace RukNarok
                 if (model is MapModel)
                 {
                     MapModel mapModel = (MapModel)model;
-                    if (newMap >= MapZero && newMap <= MapTwo)
+                    if (newMap >= 0 && newMap <= 4)
                     {
                         mapModel.CurrentMap = newMap;
                         mapModel.Update();
@@ -312,6 +312,29 @@ namespace RukNarok
                     MainModel mainModel = (MainModel)model;
                     mainModel.GameStatus = "Main";
                     mainModel.Update();
+                }
+            }
+        }
+
+        public void PlayerWarp(Warp warp)
+        {
+            foreach (Model model in ModelList)
+            {
+                if (model is MapModel)
+                {
+                    MapModel mapModel = (MapModel)model;
+                    switch (warp)
+                    {
+                        case Warp.LEFT:
+                            if (mapModel.CurrentMap > 0) mapModel.CurrentMap--;
+                            break;
+                        case Warp.RIGHT:
+                            mapModel.CurrentMap++;
+                            break;
+                        default:
+                            break;
+                    }
+                    mapModel.Update();
                 }
             }
         }
